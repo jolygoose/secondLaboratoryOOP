@@ -142,10 +142,12 @@
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="firstBlock.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SecondBlock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="FirstBlock.h" />
+    <ClInclude Include="SecondBlock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
