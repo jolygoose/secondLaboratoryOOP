@@ -6,8 +6,10 @@
 /// @brief Перечисление доступных пунктов меню второго блока
 enum class SecondBlockTasks
 {
-	First = 49,
-	Second = 50,
+	Rectangle = 49,
+	Flight = 50,
+	Movie = 51,
+	Time = 52,
 	Exit = 27
 };
 

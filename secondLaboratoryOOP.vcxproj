@@ -142,12 +142,26 @@
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="firstBlock.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Movie.cpp" />
+    <ClCompile Include="PhoneContact.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="SecondBlock.cpp" />
+    <ClCompile Include="Song.cpp" />
+    <ClCompile Include="Subject.cpp" />
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="Flight.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="FirstBlock.h" />
+    <ClInclude Include="Movie.h" />
+    <ClInclude Include="PhoneContact.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="SecondBlock.h" />
+    <ClInclude Include="Song.h" />
+    <ClInclude Include="Subject.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="Flight.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
