@@ -55,23 +55,39 @@ void TimeMain()
 	while (true)
 	{
 		cout << "Time menu:" << endl
-			<< "1. Task 2.2.3.1" << endl
-			<< "2. Task 2.2.3.2" << endl
-			<< "3. Task 2.2.3.3" << endl
+			<< "1. Work with one time data with pointers and references" << endl
+			<< "2. Work with one user-entered time data" << endl
+			<< "3. Work with array of user-entered time data" << endl
 			<< "Press ESC for exit" << endl;
 		TimeMenu taskChoice = static_cast <TimeMenu> (_getch());
 		system("cls");
 		switch (taskChoice)
 		{
-			// 2.2.3.1 - One static time
+			// 2.2.3.1 + 2.2.4.1-2 - One time
 			case TimeMenu::FirstTask:
 			{
 				cout << "Example of displaying time information" << endl << endl;
 				Time* time = new Time;
+				// 2.2.3.1
 				DemoTime(time);
 				ShowTime(time);
-				cout << endl;
+				// 2.2.4.1
+				Time* newTime = time;
+				cout << endl << "~ New flight pointer ~" << endl << endl;
+				ShowTime(newTime);
+				cout << endl << "Enter new values for flight" << endl;
+				PushInfoAboutTime(newTime);
+				cout << endl << "~ Values changed ~" << endl << endl;
+				ShowTime(newTime);
+				// 2.2.4.2
+				Time* secondNewTime = time;
+				cout << endl << "Addresses: " << time
+					<< " | " << newTime
+					<< " | " << secondNewTime << endl << endl;
 				delete time;
+				time = nullptr;
+				newTime = nullptr;
+				secondNewTime = nullptr;
 				break;
 			}
 			// 2.2.3.2 - One user-entered time
@@ -85,10 +101,11 @@ void TimeMain()
 				ShowTime(time);
 				cout << endl;
 				delete time;
+				time = nullptr;
 				break;
 			}
-			// 2.2.3.3 - Some user-entered movies
-			case TimeMenu::ThirdTask:
+			// 2.2.3.3 - Some user-entered time
+			case TimeMenu::WorkWithArray:
 			{
 				cout << "An example of working with a user-entered array of "
 					<< "time data" << endl << endl;
@@ -97,14 +114,14 @@ void TimeMain()
 				Time** arrayOfTime = new Time * [arraySize];
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
-					cout << "[" << i + 1 << "] Time" << endl;
+					cout << "[" << i << "] Time" << endl;
 					arrayOfTime[i] = new Time;
 					PushInfoAboutTime(arrayOfTime[i]);
 				}
 				cout << endl << "Array of time:" << endl;
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
-					cout << "Time [" << i + 1 << "]: ";
+					cout << "Time [" << i << "]: ";
 					ShowTime(arrayOfTime[i]);
 				}
 				cout << endl;

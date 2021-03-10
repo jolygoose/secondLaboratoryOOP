@@ -11,7 +11,7 @@ enum class FlightMenu
 {
 	FirstTask = 49,
 	SecondTask = 50,
-	ThirdTask = 51,
+	WorkWithArray = 51,
 	Exit = 27
 };
 

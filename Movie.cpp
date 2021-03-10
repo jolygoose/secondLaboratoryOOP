@@ -45,23 +45,39 @@ void MovieMain()
 	while (true)
 	{
 		cout << "Movie menu:" << endl
-			<< "1. Task 2.2.3.1" << endl
-			<< "2. Task 2.2.3.2" << endl
-			<< "3. Task 2.2.3.3" << endl
+			<< "1. Work with one movie data with pointers and references" << endl
+			<< "2. Work with one user-entered movie data" << endl
+			<< "3. Work with array of user-entered movies data" << endl
 			<< "Press ESC for exit" << endl;
 		MovieMenu taskChoice = static_cast <MovieMenu> (_getch());
 		system("cls");
 		switch (taskChoice)
 		{
-			// 2.2.3.1 - One static movie
+			// 2.2.3.1 + 2.2.4.1-2 - One movie
 			case MovieMenu::FirstTask:
 			{
 				cout << "Example of displaying movie information" << endl << endl;
 				Movie* movie = new Movie;
+				// 2.2.3.1
 				DemoMovie(movie);
 				ShowMovie(movie);
-				cout << endl;
+				// 2.2.4.1
+				Movie* newMovie = movie;
+				cout << endl << "~ New movie pointer ~" << endl << endl;
+				ShowMovie(newMovie);
+				cout << endl << "Enter new values for movie" << endl;
+				PushInfoAboutMovie(newMovie);
+				cout << endl << "~ Values changed ~" << endl << endl;
+				ShowMovie(newMovie);
+				// 2.2.4.2
+				Movie* secondNewMovie = movie;
+				cout << endl << "Addresses: " << movie
+					<< " | " << newMovie
+					<< " | " << secondNewMovie << endl << endl;
 				delete movie;
+				movie = nullptr;
+				newMovie = nullptr;
+				secondNewMovie = nullptr;
 				break;
 			}
 			// 2.2.3.2 - One user-entered movie
@@ -75,10 +91,11 @@ void MovieMain()
 				ShowMovie(movie);
 				cout << endl;
 				delete movie;
+				movie = nullptr;
 				break;
 			}
 			// 2.2.3.3 - Some user-entered movies
-			case MovieMenu::ThirdTask:
+			case MovieMenu::WorkWithArray:
 			{
 				cout << "An example of working with a user-entered array of movies data"
 					<< endl << endl;
@@ -87,14 +104,14 @@ void MovieMain()
 				Movie** arrayOfMovies = new Movie * [arraySize];
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
-					cout << "[" << i + 1 << "] Movie" << endl;
+					cout << "[" << i << "] Movie" << endl;
 					arrayOfMovies[i] = new Movie;
 					PushInfoAboutMovie(arrayOfMovies[i]);
 				}
 				cout << endl << "Array of movies:" << endl;
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
-					cout << "Movie [" << i + 1 << "]: ";
+					cout << "Movie [" << i << "]: ";
 					ShowMovie(arrayOfMovies[i]);
 				}
 				cout << endl;

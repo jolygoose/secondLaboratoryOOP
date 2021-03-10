@@ -11,7 +11,8 @@ enum class RectangleMenu
 {
 	FirstTask = 49,
 	SecondTask = 50,
-	ThirdTask = 51,
+	WorkWithArray = 51,
+	FourthTask = 52,
 	Exit = 27
 };
 
@@ -27,6 +28,16 @@ void DemoRectangle(Rectangle* rectangle);
 void PushInfoAboutRectangle(Rectangle* rectangle);
 
 void ShowRectangle(Rectangle* rectangle);
+
+void ReadRectangle(Rectangle*& rectangle);
+
+void WriteRectangle(Rectangle*& rectangle);
+
+void DemoReadAndWriteRectangles(Rectangle** arrayOfRectangles, unsigned int arraySize);
+
+void Exchange(Rectangle*& firstRectangle, Rectangle*& secondRectangle);
+
+void FindRectangle(Rectangle** rectangles, int count);
 
 void RectangleMain();
 
