@@ -99,6 +99,42 @@ double GetRandomDoubleValue()
 }
 
 
+unsigned int GetCorrectUnsignedIntegerValue()
+{
+	int temporaryValue = GetCorrectIntegerValue();
+	while (temporaryValue < 0)
+	{
+		cerr << "Error: Value cannot be less than zero" << endl;
+		temporaryValue = GetCorrectIntegerValue();
+	}
+	return (static_cast <unsigned int> (temporaryValue));
+}
+
+
+unsigned int GetCorrectHoursValue()
+{
+	unsigned int hours = GetCorrectUnsignedIntegerValue();
+	while (hours > 23)
+	{
+		cerr << "Error: Value cannot be more than 23" << endl;
+		hours = GetCorrectUnsignedIntegerValue();
+	}
+	return hours;
+}
+
+
+unsigned int GetCorrectMinutesOrSecondsValue()
+{
+	unsigned int minutesOrSeconds = GetCorrectUnsignedIntegerValue();
+	while (minutesOrSeconds > 59)
+	{
+		cerr << "Error: Value cannot be more than 59" << endl;
+		minutesOrSeconds = GetCorrectUnsignedIntegerValue();
+	}
+	return minutesOrSeconds;
+}
+
+
 void ShowArrayOfIntegers(int* arrayOfValues, const int bufferSize)
 {
 	cout << endl << "Array of integers:" << endl;

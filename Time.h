@@ -3,11 +3,27 @@
 #ifndef _TIME_H_
 #define _TIME_H_
 
+enum class TimeMenu
+{
+	FirstTask = 49,
+	SecondTask = 50,
+	ThirdTask = 51,
+	Exit = 27
+};
+
 struct Time
 {
-	int Hours;
-	int Minutes;
-	int Seconds;
+	unsigned int Hours = 0;
+	unsigned int Minutes = 0;
+	unsigned int Seconds = 0;
 };
+
+void DemoTime(Time* time);
+
+void PushInfoAboutTime(Time* time);
+
+void ShowTime(Time* time);
+
+void TimeMain();
 
 #endif //!_TIME_H_

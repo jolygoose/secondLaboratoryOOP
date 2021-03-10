@@ -36,6 +36,12 @@ int GetRandomIntegerValue(int minimumBorder, int maximumBorder);
 /// @return Результат получения случайного числа
 double GetRandomDoubleValue();
 
+unsigned int GetCorrectUnsignedIntegerValue();
+
+unsigned int GetCorrectHoursValue();
+
+unsigned int GetCorrectMinutesOrSecondsValue();
+
 /// @brief Функция вывода на экран массива значений типа "int"
 /// 
 /// @param arrayOfValues - массив значений

@@ -7,13 +7,29 @@
 
 using namespace std;
 
+enum class MovieMenu
+{
+	FirstTask = 49,
+	SecondTask = 50,
+	ThirdTask = 51,
+	Exit = 27
+};
+
 struct Movie
 {
-	string Title;
-	int DurationInMinutes;
-	int YearOfIssue;
-	string Genre;
-	double Rating;
+	string Title = "";
+	unsigned int DurationInMinutes = 0;
+	unsigned int YearOfIssue = 0;
+	string Genre = "";
+	double Rating = 0;
 };
+
+void DemoMovie(Movie* movie);
+
+void PushInfoAboutMovie(Movie* movie);
+
+void ShowMovie(Movie* movie);
+
+void MovieMain();
 
 #endif //!_MOVIE_H_

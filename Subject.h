@@ -11,7 +11,7 @@ struct Subject
 {
 	string Title;
 	string TeacherSurname;
-	int Grade;
+	unsigned int Grade;
 };
 
 #endif //!_SUBJECT_H_

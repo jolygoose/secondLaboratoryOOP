@@ -20,6 +20,7 @@ int main()
 	{
 		cout << "Menu:" << endl
 			<< "1. First block" << endl
+			<< "2. Work with some structures" << endl
 			<< "Press ESC for exit" << endl;
 		Menu taskChoice = static_cast <Menu> (_getch());
 		system("cls");

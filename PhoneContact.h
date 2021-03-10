@@ -11,7 +11,7 @@ struct PhoneContact
 {
 	string Name;
 	string Surname;
-	int Number;
+	unsigned int Number;
 };
 
 #endif //!_PHONECONTACT_H_

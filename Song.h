@@ -11,7 +11,7 @@ struct Song
 {
 	string Title;
 	string Singer;
-	int Length;
+	unsigned int Length;
 };
 
 #endif //!_SONG_H_

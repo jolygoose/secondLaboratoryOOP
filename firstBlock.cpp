@@ -47,6 +47,7 @@ void FirstBlockMain()
 				SortArrayOfDoubles(arrayOfValues, bufferSize);
 				ShowArrayOfDoubles(arrayOfValues, bufferSize);
 				delete[] arrayOfValues;
+				arrayOfValues = nullptr;
 				break;
 			}
 			// 2.2.1.2 - DemoSort v2 (with try-catch)
@@ -74,6 +75,7 @@ void FirstBlockMain()
 					cout << "~ Sorted ~" << endl << endl;
 					ShowArrayOfDoubles(arrayOfValues, bufferSize);
 					delete[] arrayOfValues;
+					arrayOfValues = nullptr;
 				}
 				catch (const char*)
 				{
