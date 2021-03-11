@@ -24,6 +24,8 @@ struct Flight
 
 void DemoFlight(Flight* flight);
 
+unsigned int FindShortestFlight(Flight** flights, unsigned int count);
+
 void PushInfoAboutFlight(Flight* flight);
 
 void ShowFlight(Flight* flight);

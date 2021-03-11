@@ -143,11 +143,8 @@
     <ClCompile Include="firstBlock.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Movie.cpp" />
-    <ClCompile Include="PhoneContact.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="SecondBlock.cpp" />
-    <ClCompile Include="Song.cpp" />
-    <ClCompile Include="Subject.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Flight.cpp" />
   </ItemGroup>

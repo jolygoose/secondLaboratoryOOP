@@ -13,6 +13,22 @@ void DemoFlight(Flight* flight)
 }
 
 
+unsigned int FindShortestFlight(Flight** flights, unsigned int count)
+{
+	unsigned int minimumDuration = flights[0]->DurationInMinutes;
+	unsigned int index = 0;
+	for (unsigned int i = 0; i < count; ++i)
+	{
+		if (flights[i]->DurationInMinutes < minimumDuration)
+		{
+			minimumDuration = flights[i]->DurationInMinutes;
+			index = i;
+		}
+	}
+	return index;
+}
+
+
 void PushInfoAboutFlight(Flight* flight)
 {
 	cout << "Enter the departure point: ";
@@ -48,6 +64,7 @@ void FlightMain()
 			case FlightMenu::FirstTask:
 			{
 				cout << "Example of displaying flight information" << endl << endl;
+				// 2.2.6.1
 				Flight* flight = new Flight;
 				// 2.2.3.1
 				DemoFlight(flight);
@@ -92,22 +109,32 @@ void FlightMain()
 					<< endl << endl;
 				cout << "Enter the array of flights size: ";
 				unsigned int arraySize = GetCorrectUnsignedIntegerValue();
-				Flight** arrayOfFlights = new Flight * [arraySize];
+				// 2.2.6.2
+				Flight** flights = new Flight * [arraySize];
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
 					cout << "[" << i << "] Flight" << endl;
-					arrayOfFlights[i] = new Flight;
-					PushInfoAboutFlight(arrayOfFlights[i]);
+					flights[i] = new Flight;
+					PushInfoAboutFlight(flights[i]);
 				}
 				cout << endl << "Array of flights:" << endl;
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
 					cout << "Flight [" << i << "]: ";
-					ShowFlight(arrayOfFlights[i]);
+					ShowFlight(flights[i]);
 				}
-				cout << endl;
-				delete[] arrayOfFlights;
-				arrayOfFlights = nullptr;
+				// 2.2.6.3
+				unsigned int shortestFlightIndex
+					= FindShortestFlight(flights, arraySize);
+				cout << endl << "The shortest flight: "
+					<< flights[shortestFlightIndex]->DeparturePoint
+					<< " - " 
+					<< flights[shortestFlightIndex]->Destination
+					<< " will be in transit " 
+					<< flights[shortestFlightIndex]->DurationInMinutes 
+					<< " minutes" << endl << endl;
+				delete[] flights;
+				flights = nullptr;
 				return;
 			}
 			case FlightMenu::Exit:
