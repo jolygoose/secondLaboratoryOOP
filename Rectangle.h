@@ -29,15 +29,17 @@ void PushInfoAboutRectangle(Rectangle* rectangle);
 
 void ShowRectangle(Rectangle* rectangle);
 
-void ReadRectangle(Rectangle*& rectangle);
-
 void WriteRectangle(Rectangle*& rectangle);
+
+void ReadRectangle(Rectangle*& rectangle);
 
 void DemoReadAndWriteRectangles(Rectangle** arrayOfRectangles, unsigned int arraySize);
 
 void Exchange(Rectangle*& firstRectangle, Rectangle*& secondRectangle);
 
-void FindRectangle(Rectangle** rectangles, int count);
+unsigned int FindRectangle(Rectangle** rectangles, unsigned int count);
+
+unsigned int FindMaxRectangle(Rectangle** rectangles, unsigned int count);
 
 void RectangleMain();
 

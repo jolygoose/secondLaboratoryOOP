@@ -4,7 +4,7 @@
 #include "Rectangle.h"
 #include "Common.h"
 
-
+// 2.2.3.1
 void DemoRectangle(Rectangle* rectangle)
 {
 	rectangle->Length = 60;
@@ -44,7 +44,16 @@ void ShowRectangle(Rectangle* rectangle)
 		<< "Color = " << rectangle->Color << " |" << endl;
 }
 
+// 2.2.5.1
+void WriteRectangle(Rectangle*& rectangle)
+{
+	cout << "Rectangle characteristics: "
+		<< "Length = " << rectangle->Length << " | "
+		<< "Width = " << rectangle->Width << " | "
+		<< "Color = " << rectangle->Color << " |" << endl;
+}
 
+// 2.2.5.2
 void ReadRectangle(Rectangle*& rectangle)
 {
 	cout << "Enter the length: ";
@@ -55,16 +64,7 @@ void ReadRectangle(Rectangle*& rectangle)
 	getline(cin, rectangle->Color);
 }
 
-
-void WriteRectangle(Rectangle*& rectangle)
-{
-	cout << "Rectangle characteristics: "
-		<< "Length = " << rectangle->Length << " | "
-		<< "Width = " << rectangle->Width << " | "
-		<< "Color = " << rectangle->Color << " |" << endl;
-}
-
-
+// 2.2.5.3
 void DemoReadAndWriteRectangles(Rectangle** arrayOfRectangles, unsigned int arraySize)
 {
 	for (unsigned int i = 0; i < arraySize; ++i)
@@ -82,7 +82,7 @@ void DemoReadAndWriteRectangles(Rectangle** arrayOfRectangles, unsigned int arra
 	cout << endl;
 }
 
-
+// 2.2.5.4
 void Exchange(Rectangle*& firstRectangle, Rectangle*& secondRectangle)
 {
 	// length
@@ -99,20 +99,39 @@ void Exchange(Rectangle*& firstRectangle, Rectangle*& secondRectangle)
 	secondRectangle->Color = temporaryString;
 }
 
-/*
-void FindRectangle(Rectangle** rectangles, int count)
+// 2.2.5.5
+unsigned int FindRectangle(Rectangle** rectangles, unsigned int count)
 {
-	double minimumLength = 0;
-	int index = 0;
+	double maximumLength = 0;
+	unsigned int index = 0;
 	for (unsigned int i = 0; i < count; ++i)
 	{
-		if (rectangles[i].Length > minimumLength)
+		if (rectangles[i]->Length > maximumLength)
 		{
-
+			maximumLength = rectangles[i]->Length;
+			index = i;
 		}
 	}
+	return index;
 }
-*/
+
+// 2.2.5.6
+unsigned int FindMaxRectangle(Rectangle** rectangles, unsigned int count)
+{
+	double maximumSquare = 0;
+	double temporarySquare = 0;
+	unsigned int index = 0;
+	for (unsigned int i = 0; i < count; ++i)
+	{
+		temporarySquare = rectangles[i]->Length * rectangles[i]->Width;
+		if (temporarySquare > maximumSquare)
+		{
+			maximumSquare = temporarySquare;
+			index = i;
+		}
+	}
+	return index;
+}
 
 void RectangleMain()
 {
@@ -200,7 +219,22 @@ void RectangleMain()
 					cout << "Rectangle [" << i << "]: ";
 					WriteRectangle(arrayOfRectangles[i]);
 				}
-
+				// 2.2.5.5
+				unsigned int indexOfMaximumLength 
+					= FindRectangle(arrayOfRectangles, arraySize);
+				cout << endl << "Rectangle with maximum length: Index ["
+					<< indexOfMaximumLength << "] | "
+					<< arrayOfRectangles[indexOfMaximumLength]->Length << "x"
+					<< arrayOfRectangles[indexOfMaximumLength]->Width << " | Color: "
+					<< arrayOfRectangles[indexOfMaximumLength]->Color << " |" << endl << endl;
+				// 2.2.5.6
+				unsigned int indexOfMaximumSquare
+					= FindMaxRectangle(arrayOfRectangles, arraySize);
+				cout << "Rectangle with maximum square: Index ["
+					<< indexOfMaximumLength << "] | "
+					<< arrayOfRectangles[indexOfMaximumLength]->Length << "x"
+					<< arrayOfRectangles[indexOfMaximumLength]->Width << " | Color: "
+					<< arrayOfRectangles[indexOfMaximumLength]->Color << " |" << endl << endl;
 				delete[] arrayOfRectangles;
 				arrayOfRectangles = nullptr;
 				return;
