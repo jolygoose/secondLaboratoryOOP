@@ -24,9 +24,14 @@ struct Movie
 	double Rating = 0;
 };
 
-void DemoMovie(Movie* movie);
+Movie* MakeMovie(string& title, string& genre, double rating,
+	unsigned int yearOfIssue, unsigned int durationInMinutes);
 
-void PushInfoAboutMovie(Movie* movie);
+Movie* DemoMovie();
+
+Movie* PushInfoAboutMovie();
+
+void ChangeInfoAboutMovie(Movie* movie);
 
 void ShowMovie(Movie* movie);
 
