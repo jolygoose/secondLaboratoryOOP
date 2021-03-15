@@ -7,19 +7,24 @@
 
 using namespace std;
 
+/// @brief Перечисление доступных пунктов меню работы
+/// со структурой прямоугольника
 enum class RectangleMenu
 {
-	FirstTask = 49,
-	SecondTask = 50,
-	WorkWithArray = 51,
-	FourthTask = 52,
-	Exit = 27
+	// Используются ASCII-коды
+	FirstTask = 49, // 1
+	SecondTask = 50, // 2
+	WorkWithArray = 51, // 3
+	Exit = 27 // ESC
 };
 
 struct Rectangle
 {
+	// Длина
 	double Length = 0;
+	// Ширина
 	double Width = 0;
+	// Цвет
 	string Color = "";
 };
 

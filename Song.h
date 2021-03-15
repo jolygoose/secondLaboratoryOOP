@@ -7,11 +7,15 @@
 
 using namespace std;
 
+/// @brief Структура песни
 struct Song
 {
+	// Название
 	string Title;
+	// Исполнитель
 	string Singer;
-	unsigned int Length;
+	// Продолжительность в секундах
+	unsigned int DurationInSeconds;
 };
 
 #endif //!_SONG_H_

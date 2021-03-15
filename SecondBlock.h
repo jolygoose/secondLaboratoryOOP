@@ -6,11 +6,12 @@
 /// @brief Перечисление доступных пунктов меню второго блока
 enum class SecondBlockTasks
 {
-	Rectangle = 49,
-	Flight = 50,
-	Movie = 51,
-	Time = 52,
-	Exit = 27
+	// Используются ASCII-коды
+	Rectangle = 49, // 1
+	Flight = 50, // 2
+	Movie = 51, // 3
+	Time = 52, // 4
+	Exit = 27 // ESC
 };
 
 void SecondBlockMain();

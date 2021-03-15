@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="firstBlock.cpp" />
     <ClCompile Include="main.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="Flight.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="FirstBlock.h" />
     <ClInclude Include="Movie.h" />

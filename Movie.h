@@ -7,20 +7,28 @@
 
 using namespace std;
 
+/// @brief Перечисление доступных пунктов меню работы
+/// со структурой фильма
 enum class MovieMenu
 {
-	FirstTask = 49,
-	SecondTask = 50,
-	WorkWithArray = 51,
-	Exit = 27
+	// Используются ASCII-коды
+	FirstTask = 49, // 1
+	SecondTask = 50, // 2
+	WorkWithArray = 51, // 3
+	Exit = 27 // ESC
 };
 
 struct Movie
 {
+	// Название
 	string Title = "";
+	// Продолжительность в минутах
 	unsigned int DurationInMinutes = 0;
+	// Год выпуска
 	unsigned int YearOfIssue = 0;
+	// Жанр
 	string Genre = "";
+	// Рейтинг
 	double Rating = 0;
 };
 

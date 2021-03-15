@@ -7,10 +7,14 @@
 
 using namespace std;
 
+/// @brief Структура дисциплины
 struct Subject
 {
+	// Название
 	string Title;
+	// Фамилия преподавателя
 	string TeacherSurname;
+	// Оценка
 	unsigned int Grade;
 };
 

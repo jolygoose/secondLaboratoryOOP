@@ -3,18 +3,24 @@
 #ifndef _TIME_H_
 #define _TIME_H_
 
+/// @brief Перечисление доступных пунктов меню работы
+/// со структурой времени
 enum class TimeMenu
 {
-	FirstTask = 49,
-	SecondTask = 50,
-	WorkWithArray = 51,
-	Exit = 27
+	// Используются ASCII-коды
+	FirstTask = 49, // 1
+	SecondTask = 50, // 2
+	WorkWithArray = 51, // 3
+	Exit = 27 // ESC
 };
 
 struct Time
 {
+	// Часы
 	unsigned int Hours = 0;
+	// Минуты
 	unsigned int Minutes = 0;
+	// Секунды
 	unsigned int Seconds = 0;
 };
 

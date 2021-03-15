@@ -6,9 +6,10 @@
 /// @brief Перечисление доступных пунктов меню первого блока
 enum class FirstBlockTasks
 {
-	First = 49,
-	Second = 50,
-	Exit = 27
+	// Используются ASCII-коды
+	First = 49, // 1
+	Second = 50, // 2
+	Exit = 27 // ESC
 };
 
 /// @brief Функция сортировки массива вещественных чисел

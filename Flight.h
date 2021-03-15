@@ -1,24 +1,30 @@
 #pragma once
 
-#ifndef _VOYAGE_H_
-#define _VOYAGE_H_
+#ifndef _FLIGHT_H_
+#define _FLIGHT_H_
 
 #include <string>
 
 using namespace std;
 
+/// @brief Перечисление доступных пунктов меню работы
+/// со структурой рейса
 enum class FlightMenu
 {
-	FirstTask = 49,
-	SecondTask = 50,
-	WorkWithArray = 51,
-	Exit = 27
+	// Используются ASCII-коды
+	FirstTask = 49, // 1
+	SecondTask = 50, // 2
+	WorkWithArray = 51, // 3
+	Exit = 27 // ESC
 };
 
 struct Flight
 {
+	// Пункт отправления
 	string DeparturePoint = "";
+	// Пункт назначения
 	string Destination = "";
+	// Продолжительность полёта в минутах
 	unsigned int DurationInMinutes = 0;
 };
 
@@ -39,4 +45,4 @@ void ShowFlight(Flight* flight);
 
 void FlightMain();
 
-#endif //!_VOYAGE_H_
+#endif //!_FLIGHT_H_
