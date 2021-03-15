@@ -18,6 +18,18 @@ Movie* MakeMovie(string title, string genre, double rating,
 }
 
 
+Movie* CopyMovie(Movie* movie)
+{
+	Movie* copiedMovie = new Movie();
+	copiedMovie->Title = movie->Title;
+	copiedMovie->Genre = movie->Genre;
+	copiedMovie->DurationInMinutes = movie->DurationInMinutes;
+	copiedMovie->YearOfIssue = movie->YearOfIssue;
+	copiedMovie->Rating = movie->Rating;
+	return copiedMovie;
+}
+
+
 Movie* DemoMovie()
 {
 	return MakeMovie("Teacher", "Comedy", 9.3, 1939, 104);
@@ -119,8 +131,12 @@ void MovieMain()
 				movie = PushInfoAboutMovie();
 				cout << endl << "Your movie:" << endl;
 				ShowMovie(movie);
+				cout << endl << "~ Try to copy movie ~" << endl;
+				Movie* copiedMovie = CopyMovie(movie);
+				ShowMovie(copiedMovie);
 				cout << endl;
 				delete movie;
+				delete copiedMovie;
 				movie = nullptr;
 				break;
 			}

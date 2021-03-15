@@ -18,6 +18,16 @@ Time* MakeTime(unsigned int hours, unsigned int minutes,
 }
 
 
+Time* CopyTime(Time* time)
+{
+	Time* copiedtime = new Time();
+	copiedtime->Hours = time->Hours;
+	copiedtime->Minutes = time->Minutes;
+	copiedtime->Seconds = time->Seconds;
+	return copiedtime;
+}
+
+
 Time* DemoTime()
 {
 	return MakeTime(16, 34, 12);
@@ -123,9 +133,14 @@ void TimeMain()
 				Time* time = PushInfoAboutTime();
 				cout << endl << "Your time:" << endl;
 				ShowTime(time);
+				cout << endl << "~ Try to copy time ~" << endl;
+				Time* copiedTime = CopyTime(time);
+				ShowTime(copiedTime);
 				cout << endl;
 				delete time;
+				delete copiedTime;
 				time = nullptr;
+				copiedTime = nullptr;
 				break;
 			}
 			// 2.2.3.3 - Some user-entered time
@@ -148,6 +163,10 @@ void TimeMain()
 					ShowTime(arrayOfTime[i]);
 				}
 				cout << endl;
+				for (unsigned int i = 0; i < arraySize; ++i)
+				{
+					delete arrayOfTime[i];
+				}
 				delete[] arrayOfTime;
 				arrayOfTime = nullptr;
 				return;

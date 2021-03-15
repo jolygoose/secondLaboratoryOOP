@@ -15,6 +15,16 @@ Rectangle* MakeRectangle(double length, double width, string color)
 }
 
 
+Rectangle* CopyRectangle(Rectangle* rectangle)
+{
+	Rectangle* copiedRectangle = new Rectangle();
+	copiedRectangle->Length = rectangle->Length;
+	copiedRectangle->Width = rectangle->Width;
+	copiedRectangle->Color = rectangle->Color;
+	return copiedRectangle;
+}
+
+
 Rectangle* DemoRectangle()
 {
 	return MakeRectangle(90, 50, "Purple");
@@ -201,9 +211,14 @@ void RectangleMain()
 				Rectangle* rectangle = PushInfoAboutRectangle();
 				cout << endl << "Your rectangle:" << endl;
 				ShowRectangle(rectangle);
+				cout << endl << "~ Try to copy rectangle ~" << endl;
+				Rectangle* copiedRectangle = CopyRectangle(rectangle);
+				ShowRectangle(copiedRectangle);
 				cout << endl;
 				delete rectangle;
+				delete copiedRectangle;
 				rectangle = nullptr;
+				copiedRectangle = nullptr;
 				break;
 			}
 			// 2.2.3.3 + 2.2.5.1-6 - Some user-entered rectangles
@@ -217,12 +232,12 @@ void RectangleMain()
 				DemoReadAndWriteRectangles(arrayOfRectangles, arraySize);
 				cout << "~ Swap two rectangles ~" << endl << endl;
 				cout << "Enter the index of first rectangle: ";
-				unsigned int firstRectangleIndex = GetCorrectIndexOfArray(arraySize);
+				unsigned int firstIndexToSwap = GetCorrectIndexOfArray(arraySize);
 				cout << "Enter the index of second rectangle: ";
-				unsigned int secondRectangleIndex = GetCorrectIndexOfArray(arraySize);
+				unsigned int secondIndexToSwap = GetCorrectIndexOfArray(arraySize);
 				// 2.2.5.4
-				Exchange(arrayOfRectangles[firstRectangleIndex],
-					arrayOfRectangles[secondRectangleIndex]);
+				Exchange(arrayOfRectangles[firstIndexToSwap],
+					arrayOfRectangles[secondIndexToSwap]);
 				cout << endl << "Array of rectangles:" << endl;
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
@@ -232,19 +247,18 @@ void RectangleMain()
 				// 2.2.5.5
 				unsigned int indexOfMaximumLength 
 					= FindRectangle(arrayOfRectangles, arraySize);
-				cout << endl << "Rectangle with maximum length: Index ["
-					<< indexOfMaximumLength << "] | "
-					<< arrayOfRectangles[indexOfMaximumLength]->Length << "x"
-					<< arrayOfRectangles[indexOfMaximumLength]->Width << " | Color: "
-					<< arrayOfRectangles[indexOfMaximumLength]->Color << " |" << endl << endl;
+				cout << endl << "Rectangle with maximum length: " << endl;
+				ShowRectangle(arrayOfRectangles[indexOfMaximumLength]);
 				// 2.2.5.6
 				unsigned int indexOfMaximumSquare
 					= FindMaxRectangle(arrayOfRectangles, arraySize);
-				cout << "Rectangle with maximum square: Index ["
-					<< indexOfMaximumLength << "] | "
-					<< arrayOfRectangles[indexOfMaximumLength]->Length << "x"
-					<< arrayOfRectangles[indexOfMaximumLength]->Width << " | Color: "
-					<< arrayOfRectangles[indexOfMaximumLength]->Color << " |" << endl << endl;
+				cout << endl << "Rectangle with maximum square: " << endl;
+				ShowRectangle(arrayOfRectangles[indexOfMaximumSquare]);
+				cout << endl;
+				for (unsigned int i = 0; i < arraySize; ++i)
+				{
+					delete arrayOfRectangles[i];
+				}
 				delete[] arrayOfRectangles;
 				arrayOfRectangles = nullptr;
 				break;

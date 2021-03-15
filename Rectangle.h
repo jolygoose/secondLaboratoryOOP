@@ -25,6 +25,8 @@ struct Rectangle
 
 Rectangle* MakeRectangle(double length, double width, string color);
 
+Rectangle* CopyRectangle(Rectangle* rectangle);
+
 Rectangle* DemoRectangle();
 
 Rectangle* PushInfoAboutRectangle();

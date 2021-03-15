@@ -21,6 +21,8 @@ struct Time
 Time* MakeTime(unsigned int hours, unsigned int minutes,
 	unsigned int seconds);
 
+Time* CopyTime(Time* time);
+
 Time* DemoTime();
 
 Time* PushInfoAboutTime();

@@ -16,6 +16,16 @@ Flight* MakeFlight(string departurePoint, string destination,
 }
 
 
+Flight* CopyFlight(Flight* flight)
+{
+	Flight* copiedFlight = new Flight();
+	copiedFlight->DeparturePoint = flight->DeparturePoint;
+	copiedFlight->Destination = flight->Destination;
+	copiedFlight->DurationInMinutes = flight->DurationInMinutes;
+	return copiedFlight;
+}
+
+
 Flight* DemoFlight()
 {
 	return MakeFlight("Moscow", "Tomsk", 255);
@@ -119,9 +129,14 @@ void FlightMain()
 				Flight* flight = PushInfoAboutFlight();
 				cout << endl << "Your flight:" << endl;
 				ShowFlight(flight);
+				cout << endl << "~ Try to copy flight ~" << endl;
+				Flight* copiedFlight = CopyFlight(flight);
+				ShowFlight(copiedFlight);
 				cout << endl;
 				delete flight;
+				delete copiedFlight;
 				flight = nullptr;
+				copiedFlight = nullptr;
 				break;
 			}
 			// 2.2.3.3 - Some user-entered flights

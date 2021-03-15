@@ -27,6 +27,8 @@ struct Movie
 Movie* MakeMovie(string title, string genre, double rating,
 	unsigned int yearOfIssue, unsigned int durationInMinutes);
 
+Movie* CopyMovie(Movie* movie);
+
 Movie* DemoMovie();
 
 Movie* PushInfoAboutMovie();

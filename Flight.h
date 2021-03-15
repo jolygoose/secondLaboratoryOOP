@@ -25,13 +25,15 @@ struct Flight
 Flight* MakeFlight(string departurePoint, string destination,
 	unsigned int durationInMinutes);
 
+Flight* CopyFlight(Flight* flight);
+
 Flight* DemoFlight();
 
 Flight* PushInfoAboutFlight();
 
 unsigned int FindShortestFlight(Flight** flights, unsigned int count);
 
-void PushInfoAboutFlight(Flight* flight);
+void ChangeInfoAboutFlight(Flight* flight);
 
 void ShowFlight(Flight* flight);
 
