@@ -23,9 +23,13 @@ struct Rectangle
 	string Color = "";
 };
 
-void DemoRectangle(Rectangle* rectangle);
+Rectangle* MakeRectangle(double length, double width, string color);
 
-void PushInfoAboutRectangle(Rectangle* rectangle);
+Rectangle* DemoRectangle();
+
+Rectangle* PushInfoAboutFlight();
+
+void ChangeInfoAboutRectangle(Rectangle* rectangle);
 
 void ShowRectangle(Rectangle* rectangle);
 

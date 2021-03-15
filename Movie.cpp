@@ -87,9 +87,9 @@ void MovieMain()
 			case MovieMenu::FirstTask:
 			{
 				cout << "Example of displaying movie information" << endl << endl;
+				// 2.2.7.2
 				Movie* movie = DemoMovie();
 				// 2.2.3.1
-				
 				ShowMovie(movie);
 				// 2.2.4.1
 				Movie* newMovie = movie;
@@ -115,8 +115,8 @@ void MovieMain()
 			{
 				cout << "An example of working with user-entered movie data"
 					<< endl << endl;
-				Movie* movie = new Movie;
-				ChangeInfoAboutMovie(movie);
+				Movie* movie;
+				movie = PushInfoAboutMovie();
 				cout << endl << "Your movie:" << endl;
 				ShowMovie(movie);
 				cout << endl;
@@ -135,8 +135,7 @@ void MovieMain()
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
 					cout << "[" << i << "] Movie" << endl;
-					arrayOfMovies[i] = new Movie;
-					ChangeInfoAboutMovie(arrayOfMovies[i]);
+					arrayOfMovies[i] = PushInfoAboutMovie();
 				}
 				cout << endl << "Array of movies:" << endl;
 				for (unsigned int i = 0; i < arraySize; ++i)
@@ -145,9 +144,13 @@ void MovieMain()
 					ShowMovie(arrayOfMovies[i]);
 				}
 				cout << endl;
+				for (unsigned int i = 0; i < arraySize; ++i)
+				{
+					delete arrayOfMovies[i];
+				}
 				delete[] arrayOfMovies;
 				arrayOfMovies = nullptr;
-				return;
+				break;
 			}
 			case MovieMenu::Exit:
 			{

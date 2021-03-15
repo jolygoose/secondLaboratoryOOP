@@ -5,11 +5,35 @@
 #include "Common.h"
 
 
-void DemoFlight(Flight* flight)
+Flight* MakeFlight(string departurePoint, string destination,
+	unsigned int durationInMinutes)
 {
-	flight->DeparturePoint = "Moscow";
-	flight->Destination = "Tomsk";
-	flight->DurationInMinutes = 235;
+	Flight* flight = new Flight();
+	flight->DeparturePoint = departurePoint;
+	flight->Destination = destination;
+	flight->DurationInMinutes = durationInMinutes;
+	return flight;
+}
+
+
+Flight* DemoFlight()
+{
+	return MakeFlight("Moscow", "Tomsk", 255);
+}
+
+
+Flight* PushInfoAboutFlight()
+{
+	string departurePoint;
+	string destination;
+	unsigned int durationInMinutes;
+	cout << "Enter the departure point: ";
+	getline(cin, departurePoint);
+	cout << "Enter the destination: ";
+	getline(cin, destination);
+	cout << "Enter the duration in minutes: ";
+	durationInMinutes = GetCorrectUnsignedIntegerValue();
+	return MakeFlight(departurePoint, destination, durationInMinutes);
 }
 
 
@@ -29,7 +53,7 @@ unsigned int FindShortestFlight(Flight** flights, unsigned int count)
 }
 
 
-void PushInfoAboutFlight(Flight* flight)
+void ChangeInfoAboutFlight(Flight* flight)
 {
 	cout << "Enter the departure point: ";
 	getline(cin, flight->DeparturePoint);
@@ -64,17 +88,16 @@ void FlightMain()
 			case FlightMenu::FirstTask:
 			{
 				cout << "Example of displaying flight information" << endl << endl;
-				// 2.2.6.1
-				Flight* flight = new Flight;
+				// 2.2.6.1 - 2.2.7.2
+				Flight* flight = DemoFlight();
 				// 2.2.3.1
-				DemoFlight(flight);
 				ShowFlight(flight);
 				// 2.2.4.1
 				Flight* newFlight = flight;
 				cout << endl << "~ New flight pointer ~" << endl << endl;
 				ShowFlight(newFlight);
 				cout << endl << "Enter new values for flight" << endl;
-				PushInfoAboutFlight(newFlight);
+				ChangeInfoAboutFlight(newFlight);
 				cout << endl << "~ Values changed ~" << endl << endl;
 				ShowFlight(newFlight);
 				// 2.2.4.2
@@ -93,8 +116,7 @@ void FlightMain()
 			{
 				cout << "An example of working with user-entered flight data"
 					<< endl << endl;
-				Flight* flight = new Flight;
-				PushInfoAboutFlight(flight);
+				Flight* flight = PushInfoAboutFlight();
 				cout << endl << "Your flight:" << endl;
 				ShowFlight(flight);
 				cout << endl;
@@ -114,8 +136,7 @@ void FlightMain()
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
 					cout << "[" << i << "] Flight" << endl;
-					flights[i] = new Flight;
-					PushInfoAboutFlight(flights[i]);
+					flights[i] = PushInfoAboutFlight();
 				}
 				cout << endl << "Array of flights:" << endl;
 				for (unsigned int i = 0; i < arraySize; ++i)
@@ -133,9 +154,13 @@ void FlightMain()
 					<< " will be in transit " 
 					<< flights[shortestFlightIndex]->DurationInMinutes 
 					<< " minutes" << endl << endl;
+				for (unsigned int i = 0; i < arraySize; ++i)
+				{
+					delete flights[i];
+				}
 				delete[] flights;
 				flights = nullptr;
-				return;
+				break;
 			}
 			case FlightMenu::Exit:
 			{

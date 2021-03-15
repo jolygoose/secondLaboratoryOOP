@@ -22,7 +22,12 @@ struct Flight
 	unsigned int DurationInMinutes = 0;
 };
 
-void DemoFlight(Flight* flight);
+Flight* MakeFlight(string departurePoint, string destination,
+	unsigned int durationInMinutes);
+
+Flight* DemoFlight();
+
+Flight* PushInfoAboutFlight();
 
 unsigned int FindShortestFlight(Flight** flights, unsigned int count);
 

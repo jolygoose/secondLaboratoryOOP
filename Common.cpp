@@ -111,6 +111,18 @@ unsigned int GetCorrectUnsignedIntegerValue()
 }
 
 
+double GetCorrectUnsignedDoubleValue()
+{
+	double temporaryValue = GetCorrectDoubleValue();
+	while (temporaryValue < 0)
+	{
+		cerr << "Error: Value cannot be less than zero" << endl;
+		temporaryValue = GetCorrectDoubleValue();
+	}
+	return temporaryValue;
+}
+
+
 unsigned int GetCorrectHoursValue()
 {
 	unsigned int hours = GetCorrectUnsignedIntegerValue();
@@ -132,6 +144,18 @@ unsigned int GetCorrectMinutesOrSecondsValue()
 		minutesOrSeconds = GetCorrectUnsignedIntegerValue();
 	}
 	return minutesOrSeconds;
+}
+
+
+unsigned int GetCorrectIndexOfArray(unsigned int arraySize)
+{
+	unsigned int index = GetCorrectUnsignedIntegerValue();
+	while (index >= (arraySize - 1))
+	{
+		cerr << "Error: Value cannot be more than " << (arraySize - 1) << endl;
+		index = GetCorrectUnsignedIntegerValue();
+	}
+	return index;
 }
 
 

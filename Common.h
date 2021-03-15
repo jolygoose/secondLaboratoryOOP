@@ -38,9 +38,13 @@ double GetRandomDoubleValue();
 
 unsigned int GetCorrectUnsignedIntegerValue();
 
+double GetCorrectUnsignedDoubleValue();
+
 unsigned int GetCorrectHoursValue();
 
 unsigned int GetCorrectMinutesOrSecondsValue();
+
+unsigned int GetCorrectIndexOfArray(unsigned int arraySize);
 
 /// @brief Функция вывода на экран массива значений типа "int"
 /// 

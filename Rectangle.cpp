@@ -4,33 +4,44 @@
 #include "Rectangle.h"
 #include "Common.h"
 
-// 2.2.3.1
-void DemoRectangle(Rectangle* rectangle)
+
+Rectangle* MakeRectangle(double length, double width, string color)
 {
-	rectangle->Length = 60;
-	rectangle->Width = 90;
-	rectangle->Color = "Purple";
+	Rectangle* rectangle = new Rectangle();
+	rectangle->Length = length;
+	rectangle->Width = width;
+	rectangle->Color = color;
+	return rectangle;
 }
 
 
-unsigned int GetCorrectIndexOfArray(unsigned int arraySize)
+Rectangle* DemoRectangle()
 {
-	unsigned int index = GetCorrectUnsignedIntegerValue();
-	while (index >= arraySize)
-	{
-		cerr << "Error: Value cannot be more than " << arraySize << endl;
-		index = GetCorrectUnsignedIntegerValue();
-	}
-	return index;
+	return MakeRectangle(90, 50, "Purple");
 }
 
 
-void PushInfoAboutRectangle(Rectangle* rectangle)
+Rectangle* PushInfoAboutFlight()
+{
+	double length;
+	double width;
+	string color;
+	cout << "Enter the length of rectangle: ";
+	length = GetCorrectUnsignedDoubleValue();
+	cout << "Enter the width of rectangle: ";
+	width = GetCorrectUnsignedDoubleValue();
+	cout << "Enter the color of rectangle: ";
+	getline(cin, color);
+	return MakeRectangle(length, width, color);
+}
+
+
+void ChangeInfoAboutRectangle(Rectangle* rectangle)
 {
 	cout << "Enter the length: ";
-	rectangle->Length = GetCorrectUnsignedIntegerValue();
+	rectangle->Length = GetCorrectUnsignedDoubleValue();
 	cout << "Enter the width: ";
-	rectangle->Width = GetCorrectUnsignedIntegerValue();
+	rectangle->Width = GetCorrectUnsignedDoubleValue();
 	cout << "Enter the color: ";
 	getline(cin, rectangle->Color);
 }
@@ -159,7 +170,7 @@ void RectangleMain()
 				cout << endl << "~ New rectangle pointer ~" << endl << endl;
 				ShowRectangle(newRectangle);
 				cout << endl << "Enter new values for rectangle" << endl;
-				PushInfoAboutRectangle(newRectangle);
+				ChangeInfoAboutRectangle(newRectangle);
 				cout << endl << "~ Values changed ~" << endl << endl;
 				ShowRectangle(newRectangle);
 				// 2.2.4.2
@@ -188,7 +199,7 @@ void RectangleMain()
 				cout << "An example of working with user-entered rectangle data"
 					<< endl << endl;
 				Rectangle* rectangle = new Rectangle;
-				PushInfoAboutRectangle(rectangle);
+				ChangeInfoAboutRectangle(rectangle);
 				cout << endl << "Your rectangle:" << endl;
 				ShowRectangle(rectangle);
 				cout << endl;
@@ -237,7 +248,7 @@ void RectangleMain()
 					<< arrayOfRectangles[indexOfMaximumLength]->Color << " |" << endl << endl;
 				delete[] arrayOfRectangles;
 				arrayOfRectangles = nullptr;
-				return;
+				break;
 			}
 			case RectangleMenu::Exit:
 			{
