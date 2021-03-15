@@ -18,9 +18,14 @@ struct Time
 	unsigned int Seconds = 0;
 };
 
-void DemoTime(Time* time);
+Time* MakeTime(unsigned int hours, unsigned int minutes,
+	unsigned int seconds);
 
-void PushInfoAboutTime(Time* time);
+Time* DemoTime();
+
+Time* PushInfoAboutTime();
+
+void ChangeInfoAboutTime(Time* time);
 
 void ShowTime(Time* time);
 

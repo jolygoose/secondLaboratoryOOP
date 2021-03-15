@@ -21,7 +21,7 @@ Rectangle* DemoRectangle()
 }
 
 
-Rectangle* PushInfoAboutFlight()
+Rectangle* PushInfoAboutRectangle()
 {
 	double length;
 	double width;
@@ -161,9 +161,9 @@ void RectangleMain()
 			case RectangleMenu::FirstTask:
 			{
 				cout << "Example of displaying rectangle information" << endl << endl;
-				Rectangle* rectangle = new Rectangle;
+				// 2.2.7.2
+				Rectangle* rectangle = DemoRectangle();
 				// 2.2.3.1
-				DemoRectangle(rectangle);
 				ShowRectangle(rectangle);
 				// 2.2.4.1
 				Rectangle* newRectangle = rectangle;
@@ -198,8 +198,7 @@ void RectangleMain()
 			{
 				cout << "An example of working with user-entered rectangle data"
 					<< endl << endl;
-				Rectangle* rectangle = new Rectangle;
-				ChangeInfoAboutRectangle(rectangle);
+				Rectangle* rectangle = PushInfoAboutRectangle();
 				cout << endl << "Your rectangle:" << endl;
 				ShowRectangle(rectangle);
 				cout << endl;

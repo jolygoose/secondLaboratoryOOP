@@ -149,10 +149,11 @@ unsigned int GetCorrectMinutesOrSecondsValue()
 
 unsigned int GetCorrectIndexOfArray(unsigned int arraySize)
 {
+	unsigned int maximumBorderSize = arraySize - 1;
 	unsigned int index = GetCorrectUnsignedIntegerValue();
-	while (index >= (arraySize - 1))
+	while (index > maximumBorderSize)
 	{
-		cerr << "Error: Value cannot be more than " << (arraySize - 1) << endl;
+		cerr << "Error: Value cannot be more than " << maximumBorderSize << endl;
 		index = GetCorrectUnsignedIntegerValue();
 	}
 	return index;

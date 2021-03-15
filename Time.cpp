@@ -7,15 +7,40 @@
 using namespace std;
 
 
-void DemoTime(Time* time)
+Time* MakeTime(unsigned int hours, unsigned int minutes,
+	unsigned int seconds)
 {
-	time->Hours = 16;
-	time->Minutes = 34;
-	time->Seconds = 12;
+	Time* time = new Time();
+	time->Hours = hours;
+	time->Minutes = minutes;
+	time->Seconds = seconds;
+	return time;
 }
 
 
-void PushInfoAboutTime(Time* time)
+Time* DemoTime()
+{
+	return MakeTime(16, 34, 12);
+}
+
+
+Time* PushInfoAboutTime()
+{
+	unsigned int hours;
+	unsigned int minutes;
+	unsigned int seconds;
+	cout << "Enter the hours: ";
+	hours = GetCorrectHoursValue();
+	cout << "Enter the minutes: ";
+	minutes = GetCorrectMinutesOrSecondsValue();
+	cout << "Enter the seconds: ";
+	seconds = GetCorrectMinutesOrSecondsValue();
+	return MakeTime(hours, minutes, seconds);
+}
+
+
+
+void ChangeInfoAboutTime(Time* time)
 {
 	cout << "Enter the hours: ";
 	time->Hours = GetCorrectHoursValue();
@@ -67,16 +92,16 @@ void TimeMain()
 			case TimeMenu::FirstTask:
 			{
 				cout << "Example of displaying time information" << endl << endl;
-				Time* time = new Time;
+				// 2.2.7.2
+				Time* time = DemoTime();
 				// 2.2.3.1
-				DemoTime(time);
 				ShowTime(time);
 				// 2.2.4.1
 				Time* newTime = time;
-				cout << endl << "~ New flight pointer ~" << endl << endl;
+				cout << endl << "~ New time pointer ~" << endl << endl;
 				ShowTime(newTime);
-				cout << endl << "Enter new values for flight" << endl;
-				PushInfoAboutTime(newTime);
+				cout << endl << "Enter new values for time" << endl;
+				ChangeInfoAboutTime(newTime);
 				cout << endl << "~ Values changed ~" << endl << endl;
 				ShowTime(newTime);
 				// 2.2.4.2
@@ -95,8 +120,7 @@ void TimeMain()
 			{
 				cout << "An example of working with user-entered time data"
 					<< endl << endl;
-				Time* time = new Time;
-				PushInfoAboutTime(time);
+				Time* time = PushInfoAboutTime();
 				cout << endl << "Your time:" << endl;
 				ShowTime(time);
 				cout << endl;
@@ -115,8 +139,7 @@ void TimeMain()
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
 					cout << "[" << i << "] Time" << endl;
-					arrayOfTime[i] = new Time;
-					PushInfoAboutTime(arrayOfTime[i]);
+					arrayOfTime[i] = PushInfoAboutTime();
 				}
 				cout << endl << "Array of time:" << endl;
 				for (unsigned int i = 0; i < arraySize; ++i)

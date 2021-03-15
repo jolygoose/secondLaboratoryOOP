@@ -27,7 +27,7 @@ Rectangle* MakeRectangle(double length, double width, string color);
 
 Rectangle* DemoRectangle();
 
-Rectangle* PushInfoAboutFlight();
+Rectangle* PushInfoAboutRectangle();
 
 void ChangeInfoAboutRectangle(Rectangle* rectangle);
 
