@@ -23,6 +23,33 @@ double GetCorrectDoubleValue();
 /// @return Результат считывания введённого значения
 char GetCorrectCharValue();
 
+/// @brief Функция корректного считывания значения типа данных "unsigned int"
+/// 
+/// @return Результат считывания введённого значения
+unsigned int GetCorrectUnsignedIntegerValue();
+
+/// @brief Функция корректного считывания вещественного числа без знака
+/// 
+/// @return Результат считывания введённого значения
+double GetCorrectUnsignedDoubleValue();
+
+/// @brief Функция корректного считывания числа часов
+/// 
+/// @return Результат считывания введённого значения
+unsigned int GetCorrectHoursValue();
+
+/// @brief Функция корректного считывания числа минут или секунд
+/// 
+/// @return Результат считывания введённого значения
+unsigned int GetCorrectMinutesOrSecondsValue();
+
+/// @brief Функция корректного считывания индекса массива
+/// 
+/// @param arraySize - размер массива
+/// 
+/// @return Результат считывания введённого значения
+unsigned int GetCorrectIndexOfArray(unsigned int arraySize);
+
 /// @brief Функция получения случайного значения типа данных "int"
 /// 
 /// @param minimumBorder - минимальная граница
@@ -35,16 +62,6 @@ int GetRandomIntegerValue(int minimumBorder, int maximumBorder);
 /// 
 /// @return Результат получения случайного числа
 double GetRandomDoubleValue();
-
-unsigned int GetCorrectUnsignedIntegerValue();
-
-double GetCorrectUnsignedDoubleValue();
-
-unsigned int GetCorrectHoursValue();
-
-unsigned int GetCorrectMinutesOrSecondsValue();
-
-unsigned int GetCorrectIndexOfArray(unsigned int arraySize);
 
 /// @brief Функция вывода на экран массива значений типа "int"
 /// 

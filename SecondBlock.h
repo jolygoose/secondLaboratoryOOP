@@ -14,6 +14,7 @@ enum class SecondBlockTasks
 	Exit = 27 // ESC
 };
 
-void SecondBlockMain();
+/// @brief Функция-меню для выбора структуры
+void WorkWithSomeStructuresMain();
 
 #endif //!_SECONDBLOCK_H_

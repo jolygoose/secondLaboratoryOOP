@@ -18,6 +18,7 @@ enum class FirstBlockTasks
 /// @param bufferSize - размер массива
 void SortArrayOfDoubles(double* arrayOfValues, int bufferSize);
 
+/// @brief Функция-меню для работы с первым блоком заданий
 void FirstBlockMain();
 
 #endif //!_FIRSTBLOCK_H_

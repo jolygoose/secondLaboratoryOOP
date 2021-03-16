@@ -81,24 +81,6 @@ char GetCorrectCharValue()
 }
 
 
-int GetRandomIntegerValue(int minimumBorder, int maximumBorder)
-{
-	double fractionDenominator = static_cast <double> (RAND_MAX) + 1.0;
-	static const double fraction = (1.0 / fractionDenominator);
-	int randomResult = static_cast <int> (rand() * fraction *
-		(minimumBorder - maximumBorder + 1) + minimumBorder);
-	return randomResult;
-}
-
-
-double GetRandomDoubleValue()
-{
-	int maximumBorder = 10000;
-	return (double)(rand() % maximumBorder)
-		/ (double)maximumBorder + (double)(rand() % maximumBorder);
-}
-
-
 unsigned int GetCorrectUnsignedIntegerValue()
 {
 	int temporaryValue = GetCorrectIntegerValue();
@@ -157,6 +139,24 @@ unsigned int GetCorrectIndexOfArray(unsigned int arraySize)
 		index = GetCorrectUnsignedIntegerValue();
 	}
 	return index;
+}
+
+
+int GetRandomIntegerValue(int minimumBorder, int maximumBorder)
+{
+	double fractionDenominator = static_cast <double> (RAND_MAX) + 1.0;
+	static const double fraction = (1.0 / fractionDenominator);
+	int randomResult = static_cast <int> (rand() * fraction *
+		(minimumBorder - maximumBorder + 1) + minimumBorder);
+	return randomResult;
+}
+
+
+double GetRandomDoubleValue()
+{
+	int maximumBorder = 10000;
+	return (double)(rand() % maximumBorder)
+		/ (double)maximumBorder + (double)(rand() % maximumBorder);
 }
 
 

@@ -35,7 +35,7 @@ int main()
 			// 2.2.1.*
 			case Menu::SecondBlock:
 			{
-				SecondBlockMain();
+				WorkWithSomeStructuresMain();
 				break;
 			}
 			case Menu::Exit:

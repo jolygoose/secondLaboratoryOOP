@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void SecondBlockMain()
+void WorkWithSomeStructuresMain()
 {
 	while (true)
 	{
