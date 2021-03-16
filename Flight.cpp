@@ -185,6 +185,7 @@ void FlightMain()
 			default:
 			{
 				cerr << "Error: Incorrect choice! Try again" << endl << endl;
+				break;
 			}
 		}
 	}

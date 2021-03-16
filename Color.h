@@ -11,13 +11,13 @@ using namespace std;
 enum class Color
 {
 	// Используются ASCII-коды
-	Red = 49,		// 0
-	Orange = 50,	// 1
-	Yellow = 51,	// 2
-	Green = 52,		// 3
-	LightBlue = 53, // 4
-	Blue = 54,		// 5
-	Purple = 55		// 6
+	Red = 49,		// 1
+	Orange = 50,	// 2
+	Yellow = 51,	// 3
+	Green = 52,		// 4
+	LightBlue = 53, // 5
+	Blue = 54,		// 6
+	Purple = 55		// 7
 };
 
 /// @brief Функция конвертации цвета в текст

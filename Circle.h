@@ -36,6 +36,7 @@ Circle* MakeCircle(double x, double y, double radius, Color mainColor);
 Circle* CopyCircle(Circle* circle);
 
 /// @brief Функция вывода информации о круге на экран
+/// 
 /// @param circle - круг
 void ShowCircle(Circle* circle);
 

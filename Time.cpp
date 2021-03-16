@@ -170,7 +170,7 @@ void TimeMain()
 				}
 				delete[] arrayOfTime;
 				arrayOfTime = nullptr;
-				return;
+				break;
 			}
 			case TimeMenu::Exit:
 			{
@@ -179,6 +179,7 @@ void TimeMain()
 			default:
 			{
 				cerr << "Error: Incorrect choice! Try again" << endl << endl;
+				break;
 			}
 		}
 	}
