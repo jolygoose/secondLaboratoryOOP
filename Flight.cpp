@@ -130,6 +130,7 @@ void FlightMain()
 				cout << endl << "Your flight:" << endl;
 				ShowFlight(flight);
 				cout << endl << "~ Try to copy flight ~" << endl;
+				// 2.2.7.3
 				Flight* copiedFlight = CopyFlight(flight);
 				ShowFlight(copiedFlight);
 				cout << endl;

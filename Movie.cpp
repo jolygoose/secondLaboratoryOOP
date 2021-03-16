@@ -132,6 +132,7 @@ void MovieMain()
 				cout << endl << "Your movie:" << endl;
 				ShowMovie(movie);
 				cout << endl << "~ Try to copy movie ~" << endl;
+				// 2.2.7.3
 				Movie* copiedMovie = CopyMovie(movie);
 				ShowMovie(copiedMovie);
 				cout << endl;

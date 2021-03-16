@@ -212,6 +212,7 @@ void RectangleMain()
 				cout << endl << "Your rectangle:" << endl;
 				ShowRectangle(rectangle);
 				cout << endl << "~ Try to copy rectangle ~" << endl;
+				// 2.2.7.3
 				Rectangle* copiedRectangle = CopyRectangle(rectangle);
 				ShowRectangle(copiedRectangle);
 				cout << endl;

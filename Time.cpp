@@ -134,6 +134,7 @@ void TimeMain()
 				cout << endl << "Your time:" << endl;
 				ShowTime(time);
 				cout << endl << "~ Try to copy time ~" << endl;
+				// 2.2.7.3
 				Time* copiedTime = CopyTime(time);
 				ShowTime(copiedTime);
 				cout << endl;
