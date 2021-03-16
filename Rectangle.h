@@ -18,6 +18,19 @@ enum class RectangleMenu
 	Exit = 27 // ESC
 };
 
+/// @brief Перечисление цветов
+enum class Color
+{
+	// Используются стандартные ASCII-коды
+	Red, // 0
+	Orange, // 1
+	Yellow, // 2
+	Green, // 3
+	LightBlue, // 4
+	Blue, // 5
+	Purple // 6
+};
+
 /// @brief Структура прямоугольника
 struct Rectangle
 {
@@ -26,7 +39,7 @@ struct Rectangle
 	// Ширина
 	double Width = 0;
 	// Цвет
-	string Color = "";
+	string Color;
 };
 
 /// @brief Функция-конструктор объекта структуры прямоугольник

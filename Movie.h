@@ -18,6 +18,17 @@ enum class MovieMenu
 	Exit = 27 // ESC
 };
 
+/// @brief Перечисление жанров
+enum class Genre
+{
+	Comedy = '1',
+	Drama = '2',
+	Thriller = '3',
+	Action = '4',
+	Horror = '5',
+	Blockbuster = '6'
+};
+
 /// @brief Структура фильма
 struct Movie
 {
@@ -28,21 +39,33 @@ struct Movie
 	// Год выпуска
 	unsigned int YearOfIssue = 0;
 	// Жанр
-	string Genre = "";
+	Genre MovieGenre;
 	// Рейтинг
 	double Rating = 0;
 };
 
+/// @brief Функция корректного считывания жанра
+/// 
+/// @return Результат считывания
+Genre GetCorrectGenre();
+
+/// @brief Функция конвертирования жанра в текст
+/// 
+/// @param movieGenre - жанр фильма
+/// 
+/// @return Результат конвертации
+string ConvertGenreEnumToText(Genre movieGenre);
+
 /// @brief Функция-конструктор объекта структуры фильм
 /// 
 /// @param title - название
-/// @param genre - жанр
+/// @param movieGenre - жанр
 /// @param rating - рейтинг
 /// @param yearOfIssue - год выпуска
 /// @param durationInMinutes - продолжительность в минутах
 /// 
 /// @return Результат работы функции-конструктора
-Movie* MakeMovie(string title, string genre, double rating,
+Movie* MakeMovie(string title, Genre movieGenre, double rating,
 	unsigned int yearOfIssue, unsigned int durationInMinutes);
 
 /// @brief Функция копирования объекта структуры фильм

@@ -154,8 +154,10 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="FirstBlock.h" />
     <ClInclude Include="Movie.h" />
+    <ClInclude Include="Phone.h" />
     <ClInclude Include="PhoneContact.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Season.h" />
     <ClInclude Include="SecondBlock.h" />
     <ClInclude Include="Song.h" />
     <ClInclude Include="Subject.h" />

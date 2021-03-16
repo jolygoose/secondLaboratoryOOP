@@ -5,12 +5,64 @@
 #include "Common.h"
 
 
-Movie* MakeMovie(string title, string genre, double rating,
+Genre GetCorrectGenre()
+{
+	int movieGenre = GetCorrectIntegerValue();
+	int minimumBorder = static_cast <int> (Genre::Comedy);
+	int maximumBorder = static_cast <int> (Genre::Blockbuster);
+	while ((movieGenre < 1) || (movieGenre > 6))
+	{
+		cerr << "Error: Choice cannot be less than 1 and more than 6" << endl;
+		movieGenre = GetCorrectIntegerValue();
+	}
+	return (static_cast <Genre> (movieGenre));
+}
+
+
+string ConvertGenreEnumToText(Genre movieGenre)
+{
+	string genre;
+	switch (movieGenre)
+	{
+		case Genre::Comedy:
+		{
+			genre = "Comedy";
+		}
+		case Genre::Drama:
+		{
+			genre = "Drama";
+		}
+		case Genre::Thriller:
+		{
+			genre = "Thriller";
+		}
+		case Genre::Action:
+		{
+			genre = "Action";
+		}
+		case Genre::Horror:
+		{
+			genre = "Horror";
+		}
+		case Genre::Blockbuster:
+		{
+			genre = "Blockbuster";
+		}
+		default:
+		{
+			return;
+		}
+	}
+	return genre;
+}
+
+
+Movie* MakeMovie(string title, Genre movieGenre, double rating,
 	unsigned int yearOfIssue, unsigned int durationInMinutes)
 {
 	Movie* movie = new Movie();
 	movie->Title = title;
-	movie->Genre = genre;
+	movie->MovieGenre = movieGenre;
 	movie->Rating = rating;
 	movie->YearOfIssue = yearOfIssue;
 	movie->DurationInMinutes = durationInMinutes;
@@ -22,7 +74,7 @@ Movie* CopyMovie(Movie* movie)
 {
 	Movie* copiedMovie = new Movie();
 	copiedMovie->Title = movie->Title;
-	copiedMovie->Genre = movie->Genre;
+	copiedMovie->MovieGenre = movie->MovieGenre;
 	copiedMovie->DurationInMinutes = movie->DurationInMinutes;
 	copiedMovie->YearOfIssue = movie->YearOfIssue;
 	copiedMovie->Rating = movie->Rating;
@@ -32,14 +84,14 @@ Movie* CopyMovie(Movie* movie)
 
 Movie* DemoMovie()
 {
-	return MakeMovie("Teacher", "Comedy", 9.3, 1939, 104);
+	return MakeMovie("Teacher", Genre::Comedy, 9.3, 1939, 104);
 }
 
 
 Movie* PushInfoAboutMovie()
 {
 	string title;
-	string genre;
+	Genre genre;
 	unsigned int durationInMinutes;
 	unsigned int yearOfIssue;
 	double rating;
@@ -49,8 +101,10 @@ Movie* PushInfoAboutMovie()
 	durationInMinutes = GetCorrectUnsignedIntegerValue();
 	cout << "Enter the year of issue: ";
 	yearOfIssue = GetCorrectUnsignedIntegerValue();
-	cout << "Enter the genre: ";
-	getline(cin, genre);
+	cout << "Enter the genre from the list: " << endl
+		<< "1. Comedy\t2.Drama\t3.Thriller" << endl
+		<< "4. Action\t5.Horror\tBlockbuster" << endl;
+	genre = GetCorrectGenre();
 	cout << "Enter the rating: ";
 	rating = GetCorrectDoubleValue();
 	return MakeMovie(title, genre, rating, yearOfIssue, durationInMinutes);
@@ -65,8 +119,10 @@ void ChangeInfoAboutMovie(Movie* movie)
 	movie->DurationInMinutes = GetCorrectUnsignedIntegerValue();
 	cout << "Enter the year of issue: ";
 	movie->YearOfIssue = GetCorrectUnsignedIntegerValue();
-	cout << "Enter the genre: ";
-	getline(cin, movie->Genre);
+	cout << "Enter the genre from the list: " << endl
+		<< "1. Comedy\t2.Drama\t\t3.Thriller" << endl
+		<< "4. Action\t5.Horror\t6.Blockbuster" << endl;
+	movie->MovieGenre = GetCorrectGenre();
 	cout << "Enter the rating: ";
 	movie->Rating = GetCorrectDoubleValue();
 }
@@ -77,7 +133,7 @@ void ShowMovie(Movie* movie)
 	cout << "Movie '" << movie->Title << "' - " 
 		<< "Duration: " << movie->DurationInMinutes << " minutes | "
 		<< "Year of issue: " << movie->YearOfIssue << " | "
-		<< "Genre: " << movie->Genre << " | "
+		<< "Genre: " << ConvertGenreEnumToText(movie->MovieGenre) << " | "
 		<< "Rating: " << movie->Rating << " |" << endl;
 }
 
