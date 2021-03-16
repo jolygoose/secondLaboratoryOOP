@@ -11,13 +11,13 @@ using namespace std;
 enum class Day
 {
 	// Используются ASCII-коды
-	Monday = 1, // 1
-	Tuesday = 2, // 2
-	Wednesday = 3, // 3
-	Thursday = 4, // 4
-	Friday = 5, // 5
-	Saturday = 6, // 6
-	Sunday = 7 // 7
+	Monday = 49,	// 1
+	Tuesday = 50,	// 2
+	Wednesday = 51,	// 3
+	Thursday = 52,	// 4
+	Friday = 53,	// 5
+	Saturday = 54,	// 6
+	Sunday = 55		// 7
 };
 
 /// @brief Структура дисциплины

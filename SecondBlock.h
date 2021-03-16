@@ -7,11 +7,12 @@
 enum class SecondBlockTasks
 {
 	// Используются ASCII-коды
-	Rectangle = 49, // 1
-	Flight = 50, // 2
-	Movie = 51, // 3
-	Time = 52, // 4
-	Exit = 27 // ESC
+	Rectangle = 49,	// 1
+	Flight = 50,	// 2
+	Movie = 51,		// 3
+	Time = 52,		// 4
+	Circle = 53,	// 5
+	Exit = 27		// ESC
 };
 
 /// @brief Функция-меню для выбора структуры

@@ -7,10 +7,10 @@
 enum class Season
 {
 	// Используются ASCII-коды
-	Winter = 1,
-	Spring = 2,
-	Summer = 3,
-	Autumn = 4
+	Winter = 49, // 1
+	Spring = 50, // 2
+	Summer = 51, // 3
+	Autumn = 52  // 4
 };
 
 #endif // !_SEASON_H_

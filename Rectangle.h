@@ -12,24 +12,13 @@ using namespace std;
 enum class RectangleMenu
 {
 	// Используются ASCII-коды
-	FirstTask = 49, // 1
-	SecondTask = 50, // 2
-	WorkWithArray = 51, // 3
+	FirstTask = 49,		// 1
+	SecondTask = 50,	// 2
+	WorkWithArray = 51,	// 3
 	Exit = 27 // ESC
 };
 
-/// @brief Перечисление цветов
-enum class Color
-{
-	// Используются стандартные ASCII-коды
-	Red, // 0
-	Orange, // 1
-	Yellow, // 2
-	Green, // 3
-	LightBlue, // 4
-	Blue, // 5
-	Purple // 6
-};
+
 
 /// @brief Структура прямоугольника
 struct Rectangle

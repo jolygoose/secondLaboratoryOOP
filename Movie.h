@@ -12,21 +12,22 @@ using namespace std;
 enum class MovieMenu
 {
 	// Используются ASCII-коды
-	FirstTask = 49, // 1
-	SecondTask = 50, // 2
-	WorkWithArray = 51, // 3
+	FirstTask = 49,		// 1
+	SecondTask = 50,	// 2
+	WorkWithArray = 51,	// 3
 	Exit = 27 // ESC
 };
 
 /// @brief Перечисление жанров
 enum class Genre
 {
-	Comedy = '1',
-	Drama = '2',
-	Thriller = '3',
-	Action = '4',
-	Horror = '5',
-	Blockbuster = '6'
+	// Используются ASCII-коды
+	Comedy = 49,	// 1
+	Drama = 50,		// 2
+	Thriller = 51,	// 3
+	Action = 52,	// 4
+	Horror = 53,	// 5
+	Blockbuster = 54// 6
 };
 
 /// @brief Структура фильма
@@ -44,18 +45,6 @@ struct Movie
 	double Rating = 0;
 };
 
-/// @brief Функция корректного считывания жанра
-/// 
-/// @return Результат считывания
-Genre GetCorrectGenre();
-
-/// @brief Функция конвертирования жанра в текст
-/// 
-/// @param movieGenre - жанр фильма
-/// 
-/// @return Результат конвертации
-string ConvertGenreEnumToText(Genre movieGenre);
-
 /// @brief Функция-конструктор объекта структуры фильм
 /// 
 /// @param title - название
@@ -67,6 +56,21 @@ string ConvertGenreEnumToText(Genre movieGenre);
 /// @return Результат работы функции-конструктора
 Movie* MakeMovie(string title, Genre movieGenre, double rating,
 	unsigned int yearOfIssue, unsigned int durationInMinutes);
+
+/// @brief Функция корректного считывания жанра
+/// 
+/// @return Результат считывания
+Genre GetCorrectGenre();
+
+/// @brief Функция корректного считывания рейтинга фильма
+/// 
+/// @return Результат считывания
+double GetCorrectRating();
+
+/// @brief Функция конвертирования жанра в текст
+/// 
+/// @return Результат конвертации
+string ConvertGenreEnumToText(Genre movieGenre);
 
 /// @brief Функция копирования объекта структуры фильм
 /// 

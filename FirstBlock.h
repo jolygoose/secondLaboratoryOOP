@@ -7,7 +7,7 @@
 enum class FirstBlockTasks
 {
 	// Используются ASCII-коды
-	First = 49, // 1
+	First = 49,	 // 1
 	Second = 50, // 2
 	Exit = 27 // ESC
 };

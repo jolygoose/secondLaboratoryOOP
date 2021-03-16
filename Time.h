@@ -8,9 +8,9 @@
 enum class TimeMenu
 {
 	// Используются ASCII-коды
-	FirstTask = 49, // 1
-	SecondTask = 50, // 2
-	WorkWithArray = 51, // 3
+	FirstTask = 49,		// 1
+	SecondTask = 50,	// 2
+	WorkWithArray = 51,	// 3
 	Exit = 27 // ESC
 };
 

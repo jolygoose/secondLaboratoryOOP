@@ -6,6 +6,7 @@
 #include "Flight.h"
 #include "Movie.h"
 #include "Time.h"
+#include "Circle.h"
 #include "Common.h"
 
 using namespace std;
@@ -19,6 +20,7 @@ void WorkWithSomeStructuresMain()
 			<< "2. Work with flight structure" << endl
 			<< "3. Work with movie structure" << endl
 			<< "4. Work with time structure" << endl
+			<< "5. Work with circle structure" << endl
 			<< "Press ESC for exit" << endl;
 		SecondBlockTasks taskChoice = static_cast <SecondBlockTasks> (_getch());
 		system("cls");
@@ -46,6 +48,12 @@ void WorkWithSomeStructuresMain()
 			{
 				cout << "Work with time structure" << endl << endl;
 				TimeMain();
+				break;
+			}
+			case SecondBlockTasks::Circle:
+			{
+				cout << "Work with circle structure" << endl << endl;
+				CircleMain();
 				break;
 			}
 			case SecondBlockTasks::Exit:

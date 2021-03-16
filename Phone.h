@@ -7,14 +7,14 @@
 enum class PhoneManufacturer
 {
 	// Используются ASCII-коды
-	Apple = 1,
-	Honor = 2,
-	Huawei = 3,
-	OnePlus = 4,
-	Oppo = 5,
-	Samsung = 6,
-	Sony = 7,
-	Xiaomi = 8
+	Apple = 49,		// 1
+	Honor = 50,		// 2
+	Huawei = 51,	// 3
+	OnePlus = 52,	// 4
+	Oppo = 53,		// 5
+	Samsung = 54,	// 6
+	Sony = 55,		// 7
+	Xiaomi = 56		// 8
 };
 
 #endif // !_PHONE_H_
