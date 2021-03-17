@@ -6,39 +6,38 @@
 
 using namespace std;
 
-
-string ConvertFormOfEducationEnumToText(FormOfEducation movieGenre)
+string ConvertFormOfEducationEnumToText(FormOfEducation formOfEducation)
 {
-	string formOfEducation;
-	switch (movieGenre)
+	string form;
+	switch (formOfEducation)
 	{
 		case FormOfEducation::FullTime:
 		{
-			formOfEducation = "Full-time";
+			form = "Full-time";
 			break;
 		}
 		case FormOfEducation::Ñorrespondence:
 		{
-			formOfEducation = "Correspondence";
+			form = "Correspondence";
 			break;
 		}
 		case FormOfEducation::Evening:
 		{
-			formOfEducation = "Evening";
+			form = "Evening";
 			break;
 		}
 		case FormOfEducation::Distance:
 		{
-			formOfEducation = "Distance";
+			form = "Distance";
 			break;
 		}
 		default:
 		{
-			formOfEducation = "-";
+			form = "-";
 			break;
 		}
 	}
-	return formOfEducation;
+	return form;
 }
 
 
@@ -57,9 +56,8 @@ void FormOfEducationMain()
 	while (true)
 	{
 		cout << "Form of education menu:" << endl
-			<< "1. Work with one time data with pointers and references" << endl
-			<< "2. Work with one user-entered time data" << endl
-			<< "3. Work with array of user-entered time data" << endl
+			<< "1. Work with one static FormOfEducation object" << endl
+			<< "2. Work with array of FormOfEducation objects" << endl
 			<< "Press ESC for exit" << endl;
 		FormOfEducationMenu taskChoice = static_cast <FormOfEducationMenu> (_getch());
 		system("cls");
@@ -68,7 +66,7 @@ void FormOfEducationMain()
 			case FormOfEducationMenu::FirstTask:
 			{
 				FormOfEducation formOfEducation = FormOfEducation::Distance;
-				cout << "Your form of education is: " << endl
+				cout << "Your form of education is: "
 					<< ConvertFormOfEducationEnumToText(formOfEducation) << endl << endl;
 				break;
 			}
@@ -79,7 +77,9 @@ void FormOfEducationMain()
 					= {FormOfEducation::Distance, FormOfEducation::FullTime,
 					FormOfEducation::Evening, FormOfEducation::Ñorrespondence,
 					FormOfEducation::Distance, FormOfEducation::Distance};
+				cout << "Array of forms of education: " << endl;
 				ShowFormsOfEducation(formsOfEducation, arraySize);
+				cout << endl;
 				break;
 			}
 			case FormOfEducationMenu::Exit:

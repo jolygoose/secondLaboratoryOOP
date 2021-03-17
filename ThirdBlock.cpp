@@ -2,6 +2,9 @@
 #include <conio.h>
 
 #include "ThirdBlock.h"
+#include "FormOfEducation.h"
+#include "PhoneManufacturer.h"
+#include "Season.h"
 #include "Common.h"
 
 using namespace std;
@@ -11,32 +14,33 @@ void WorkWithSomeEnums()
 	while (true)
 	{
 		cout << "Third block menu:" << endl
-			<< "1. Work with rectangle structure" << endl
-			<< "2. Work with flight structure" << endl
-			<< "3. Work with movie structure" << endl
-			<< "4. Work with time structure" << endl
-			<< "5. Work with circle structure" << endl
+			<< "1. Work with forms of education enum" << endl
+			<< "2. Work with phone manufacturer enum" << endl
+			<< "3. Work with season enum" << endl
 			<< "Press ESC for exit" << endl;
-		FirstBlockTasks taskChoice = static_cast <FirstBlockTasks> (_getch());
+		ThirdBlockTasks taskChoice = static_cast <ThirdBlockTasks> (_getch());
 		system("cls");
 		switch (taskChoice)
 		{
-			case FirstBlockTasks::FormOfEducation:
+			case ThirdBlockTasks::FormOfEducation:
 			{
-				
+				cout << "Work with forms of education enum" << endl << endl;
+				FormOfEducationMain();
 				break;
 			}
-			case FirstBlockTasks::Phone:
+			case ThirdBlockTasks::Phone:
 			{
-			
+				cout << "Work with phone manufacturer enum" << endl << endl;
+				PhoneManufacturerMain();
 				break;
 			}
-			case FirstBlockTasks::Season:
+			case ThirdBlockTasks::Season:
 			{
-
+				cout << "Work with season enum" << endl << endl;
+				SeasonMain();
 				break;
 			}
-			case FirstBlockTasks::Exit:
+			case ThirdBlockTasks::Exit:
 			{
 				return;
 			}

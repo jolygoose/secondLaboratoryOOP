@@ -3,6 +3,10 @@
 #ifndef _FORMOFEDUCATION_H_
 #define _FORMOFEDUCATION_H_
 
+#include <iostream>
+
+using namespace std;
+
 /// @brief Перечисление доступных пунктов меню работы
 /// с перечислением форм обучения
 enum class FormOfEducationMenu
@@ -23,7 +27,11 @@ enum class FormOfEducation
 	Distance = 52,	// 4
 };
 
-string ConvertFormOfEducationEnumToText(FormOfEducation movieGenre);
+/// @brief Функция конвертирования формы обучения в текст
+/// 
+/// @param formOfEducation 
+/// @return 
+string ConvertFormOfEducationEnumToText(FormOfEducation formOfEducation);
 
 void ShowFormsOfEducation(FormOfEducation formsOfEducation[], const unsigned int arraySize);
 

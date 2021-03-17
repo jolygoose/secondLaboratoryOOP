@@ -4,7 +4,7 @@
 #define _THIRDBLOCK_H_
 
 /// @brief Перечисление доступных пунктов меню первого блока
-enum class FirstBlockTasks
+enum class ThirdBlockTasks
 {
 	// Используются ASCII-коды
 	FormOfEducation = 49, // 1

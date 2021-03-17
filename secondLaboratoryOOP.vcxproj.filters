@@ -45,7 +45,7 @@
     <ClCompile Include="Color.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Phone.cpp">
+    <ClCompile Include="PhoneManufacturer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="FormOfEducation.cpp">
@@ -92,7 +92,7 @@
     <ClInclude Include="Circle.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Phone.h">
+    <ClInclude Include="PhoneManufacturer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Season.h">

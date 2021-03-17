@@ -146,7 +146,7 @@
     <ClCompile Include="FormOfEducation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Movie.cpp" />
-    <ClCompile Include="Phone.cpp" />
+    <ClCompile Include="PhoneManufacturer.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Season.cpp" />
     <ClCompile Include="SecondBlock.cpp" />
@@ -161,7 +161,7 @@
     <ClInclude Include="FirstBlock.h" />
     <ClInclude Include="FormOfEducation.h" />
     <ClInclude Include="Movie.h" />
-    <ClInclude Include="Phone.h" />
+    <ClInclude Include="PhoneManufacturer.h" />
     <ClInclude Include="PhoneContact.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Season.h" />
