@@ -3,17 +3,17 @@
 #ifndef _THIRDBLOCK_H_
 #define _THIRDBLOCK_H_
 
-/// @brief Перечисление доступных пунктов меню первого блока
+/// @brief РџРµСЂРµС‡РёСЃР»РµРЅРёРµ РґРѕСЃС‚СѓРїРЅС‹С… РїСѓРЅРєС‚РѕРІ РјРµРЅСЋ РїРµСЂРІРѕРіРѕ Р±Р»РѕРєР°
 enum class ThirdBlockTasks
 {
-	// Используются ASCII-коды
+	// РСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ ASCII-РєРѕРґС‹
 	FormOfEducation = 49, // 1
 	Phone = 50,	// 2
 	Season = 51,// 3
 	Exit = 27	// ESC
 };
 
-/// @brief Функция-меню для выбора перечисления
+/// @brief Р¤СѓРЅРєС†РёСЏ-РјРµРЅСЋ РґР»СЏ РІС‹Р±РѕСЂР° РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ
 void WorkWithSomeEnums();
 
 #endif //!_THIRDBLOCK_H_

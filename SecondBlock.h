@@ -3,10 +3,10 @@
 #ifndef _SECONDBLOCK_H_
 #define _SECONDBLOCK_H_
 
-/// @brief Перечисление доступных пунктов меню второго блока
+/// @brief РџРµСЂРµС‡РёСЃР»РµРЅРёРµ РґРѕСЃС‚СѓРїРЅС‹С… РїСѓРЅРєС‚РѕРІ РјРµРЅСЋ РІС‚РѕСЂРѕРіРѕ Р±Р»РѕРєР°
 enum class SecondBlockTasks
 {
-	// Используются ASCII-коды
+	// РСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ ASCII-РєРѕРґС‹
 	Rectangle = 49,	// 1
 	Flight = 50,	// 2
 	Movie = 51,		// 3
@@ -15,7 +15,7 @@ enum class SecondBlockTasks
 	Exit = 27		// ESC
 };
 
-/// @brief Функция-меню для выбора структуры
+/// @brief Р¤СѓРЅРєС†РёСЏ-РјРµРЅСЋ РґР»СЏ РІС‹Р±РѕСЂР° СЃС‚СЂСѓРєС‚СѓСЂС‹
 void WorkWithSomeStructuresMain();
 
 #endif //!_SECONDBLOCK_H_

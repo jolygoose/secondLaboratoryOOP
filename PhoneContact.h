@@ -7,14 +7,14 @@
 
 using namespace std;
 
-/// @brief Структура контакта в телефоне
+/// @brief РЎС‚СЂСѓРєС‚СѓСЂР° РєРѕРЅС‚Р°РєС‚Р° РІ С‚РµР»РµС„РѕРЅРµ
 struct PhoneContact
 {
-	// Имя
+	// РРјСЏ
 	string Name;
-	// Фамилия
+	// Р¤Р°РјРёР»РёСЏ
 	string Surname;
-	// Номер телефона
+	// РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°
 	unsigned int Number;
 };
 

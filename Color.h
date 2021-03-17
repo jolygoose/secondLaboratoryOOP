@@ -7,10 +7,10 @@
 
 using namespace std;
 
-/// @brief Перечисление цветов
+/// @brief РџРµСЂРµС‡РёСЃР»РµРЅРёРµ С†РІРµС‚РѕРІ
 enum class Color
 {
-	// Используются ASCII-коды
+	// РСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ ASCII-РєРѕРґС‹
 	Red = 49,		// 1
 	Orange = 50,	// 2
 	Yellow = 51,	// 3
@@ -20,11 +20,11 @@ enum class Color
 	Purple = 55		// 7
 };
 
-/// @brief Функция конвертации цвета в текст
+/// @brief Р¤СѓРЅРєС†РёСЏ РєРѕРЅРІРµСЂС‚Р°С†РёРё С†РІРµС‚Р° РІ С‚РµРєСЃС‚
 /// 
-/// @param color - цвет
+/// @param color - С†РІРµС‚
 /// 
-/// @return Результат конвертации
+/// @return Р РµР·СѓР»СЊС‚Р°С‚ РєРѕРЅРІРµСЂС‚Р°С†РёРё
 string ConvertColorEnumToText(Color color);
 
 #endif //!_COLOR_H_
