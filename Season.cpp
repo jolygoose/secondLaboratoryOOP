@@ -65,19 +65,19 @@ void SeasonMain()
 		{
 			case SeasonMenu::FirstTask:
 			{
-				Season phoneManufacturer = Season::Winter;
+				Season season = Season::Winter;
 				cout << "Your season is: "
-					<< ConvertSeasonEnumToText(phoneManufacturer) << endl << endl;
+					<< ConvertSeasonEnumToText(season) << endl << endl;
 				break;
 			}
 			case SeasonMenu::SecondTask:
 			{
 				const unsigned int arraySize = 4;
-				Season phoneManufacturers[arraySize]
+				Season seasons[arraySize]
 					= { Season::Winter, Season::Spring,
 					Season::Summer, Season::Autumn };
 				cout << "Array of seasons: " << endl;
-				ShowSeasons(phoneManufacturers, arraySize);
+				ShowSeasons(seasons, arraySize);
 				cout << endl;
 				break;
 			}

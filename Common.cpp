@@ -154,7 +154,7 @@ int GetRandomIntegerValue(int minimumBorder, int maximumBorder)
 
 double GetRandomDoubleValue()
 {
-	int maximumBorder = 10000;
+	const int maximumBorder = 10000;
 	return (double)(rand() % maximumBorder)
 		/ (double)maximumBorder + (double)(rand() % maximumBorder);
 }

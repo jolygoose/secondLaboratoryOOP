@@ -21,11 +21,12 @@ Movie* MakeMovie(string title, Genre movieGenre, double rating,
 Genre GetCorrectGenre()
 {
 	int movieGenre = _getch();
-	int minimumBorder = static_cast <int> (Genre::Comedy);
-	int maximumBorder = static_cast <int> (Genre::Blockbuster);
+	const int minimumBorder = static_cast <int> (Genre::Comedy);
+	const int maximumBorder = static_cast <int> (Genre::Blockbuster);
 	while ((movieGenre < minimumBorder) || (movieGenre > maximumBorder))
 	{
-		cerr << "Error: Choice cannot be less than " << (char)minimumBorder << " and more than " << (char)maximumBorder << endl;
+		cerr << "Error: Choice cannot be less than " << (char)minimumBorder 
+			<< " and more than " << (char)maximumBorder << endl;
 		movieGenre = _getch();
 	}
 	return (static_cast <Genre> (movieGenre));
@@ -35,7 +36,9 @@ Genre GetCorrectGenre()
 double GetCorrectRating()
 {
 	double rating = GetCorrectUnsignedDoubleValue();
-	while ((rating < 0.0) || (rating > 10.0))
+	const double minimumBorder = 0.0;
+	const double maximumBorder = 10.0;
+	while ((rating < minimumBorder) || (rating > maximumBorder))
 	{
 		cerr << "Error: Choice cannot be less than 0.0 and more than 10.0" << endl;
 		rating = GetCorrectUnsignedDoubleValue();
@@ -110,22 +113,18 @@ Movie* DemoMovie()
 Movie* PushInfoAboutMovie()
 {
 	string title;
-	Genre genre;
-	unsigned int durationInMinutes;
-	unsigned int yearOfIssue;
-	double rating;
 	cout << "Enter the title: ";
 	getline(cin, title);
 	cout << "Enter the duration in minutes: ";
-	durationInMinutes = GetCorrectUnsignedIntegerValue();
+	unsigned int durationInMinutes = GetCorrectUnsignedIntegerValue();
 	cout << "Enter the year of issue: ";
-	yearOfIssue = GetCorrectUnsignedIntegerValue();
+	unsigned int yearOfIssue = GetCorrectUnsignedIntegerValue();
 	cout << "Press the key with the specific number to select the genre of the movie:"
 		<< endl << "1. Comedy\t2.Drama\t\t3.Thriller"
 		<< endl << "4. Action\t5.Horror\t6.Blockbuster" << endl;
-	genre = GetCorrectGenre();
+	Genre genre = GetCorrectGenre();
 	cout << "Enter the rating: ";
-	rating = GetCorrectRating();
+	double rating = GetCorrectRating();
 	return MakeMovie(title, genre, rating, yearOfIssue, durationInMinutes);
 }
 
@@ -202,8 +201,7 @@ void MovieMain()
 			{
 				cout << "An example of working with user-entered movie data"
 					<< endl << endl;
-				Movie* movie;
-				movie = PushInfoAboutMovie();
+				Movie* movie = PushInfoAboutMovie();
 				cout << endl << "Your movie:" << endl;
 				ShowMovie(movie);
 				cout << endl << "~ Try to copy movie ~" << endl;

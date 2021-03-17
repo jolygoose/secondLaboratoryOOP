@@ -9,14 +9,13 @@ using namespace std;
 
 void SortArrayOfDoubles(double* arrayOfValues, int count)
 {
-	double swap;
 	for (int i = 0; i < count; ++i)
 	{
 		for (int j = 0; j < count; ++j)
 		{
 			if (arrayOfValues[i] < arrayOfValues[j])
 			{
-				swap = arrayOfValues[i];
+				double swap = arrayOfValues[i];
 				arrayOfValues[i] = arrayOfValues[j];
 				arrayOfValues[j] = swap;
 			}
@@ -41,7 +40,7 @@ void FirstBlockMain()
 			case FirstBlockTasks::First:
 			{
 				cout << "Sample function with correct sort" << endl << endl;
-				int bufferSize = 5;
+				const int bufferSize = 5;
 				double* arrayOfValues = new double[bufferSize]
 					{100.0, 249.0, 12.0, 45.0, 23.5};
 				SortArrayOfDoubles(arrayOfValues, bufferSize);
@@ -55,12 +54,13 @@ void FirstBlockMain()
 			{
 				cout << "Sample function with an exception" << endl << endl;
 				cout << "Enter the array size: ";
-				int bufferSize = GetCorrectIntegerValue();
+				const int bufferSize = GetCorrectIntegerValue();
 				try
 				{
 					if (bufferSize < 1)
 					{
-						throw "Array size cannot be less than one";
+						exception except;
+						throw except;
 					}
 					double* arrayOfValues = new double[bufferSize];
 					cout << endl;
@@ -77,7 +77,7 @@ void FirstBlockMain()
 					delete[] arrayOfValues;
 					arrayOfValues = nullptr;
 				}
-				catch (const char*)
+				catch (exception)
 				{
 					cerr << endl << "Error: Array size cannot be less than one"
 						<< endl << endl;

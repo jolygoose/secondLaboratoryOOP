@@ -16,7 +16,7 @@ string ConvertFormOfEducationEnumToText(FormOfEducation formOfEducation)
 			form = "Full-time";
 			break;
 		}
-		case FormOfEducation::�orrespondence:
+		case FormOfEducation::Correspondence:
 		{
 			form = "Correspondence";
 			break;
@@ -75,7 +75,7 @@ void FormOfEducationMain()
 				const unsigned int arraySize = 6;
 				FormOfEducation formsOfEducation[arraySize] 
 					= {FormOfEducation::Distance, FormOfEducation::FullTime,
-					FormOfEducation::Evening, FormOfEducation::Сorrespondence,
+					FormOfEducation::Evening, FormOfEducation::Correspondence,
 					FormOfEducation::Distance, FormOfEducation::Distance};
 				cout << "Array of forms of education: " << endl;
 				ShowFormsOfEducation(formsOfEducation, arraySize);

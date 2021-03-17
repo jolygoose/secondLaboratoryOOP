@@ -36,13 +36,12 @@ Flight* PushInfoAboutFlight()
 {
 	string departurePoint;
 	string destination;
-	unsigned int durationInMinutes;
 	cout << "Enter the departure point: ";
 	getline(cin, departurePoint);
 	cout << "Enter the destination: ";
 	getline(cin, destination);
 	cout << "Enter the duration in minutes: ";
-	durationInMinutes = GetCorrectUnsignedIntegerValue();
+	unsigned int durationInMinutes = GetCorrectUnsignedIntegerValue();
 	return MakeFlight(departurePoint, destination, durationInMinutes);
 }
 

@@ -33,13 +33,11 @@ Rectangle* DemoRectangle()
 
 Rectangle* PushInfoAboutRectangle()
 {
-	double length;
-	double width;
 	string color;
 	cout << "Enter the length of rectangle: ";
-	length = GetCorrectUnsignedDoubleValue();
+	double length = GetCorrectUnsignedDoubleValue();
 	cout << "Enter the width of rectangle: ";
-	width = GetCorrectUnsignedDoubleValue();
+	double width = GetCorrectUnsignedDoubleValue();
 	cout << "Enter the color of rectangle: ";
 	getline(cin, color);
 	return MakeRectangle(length, width, color);

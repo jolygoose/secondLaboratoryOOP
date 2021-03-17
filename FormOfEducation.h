@@ -22,7 +22,7 @@ enum class FormOfEducation
 {
 	// Используются ASCII-коды
 	FullTime = 49,	// 1
-	Сorrespondence = 50, // 2
+	Correspondence = 50, // 2
 	Evening = 51,	// 3
 	Distance = 52,	// 4
 };

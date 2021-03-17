@@ -36,15 +36,12 @@ Time* DemoTime()
 
 Time* PushInfoAboutTime()
 {
-	unsigned int hours;
-	unsigned int minutes;
-	unsigned int seconds;
 	cout << "Enter the hours: ";
-	hours = GetCorrectHoursValue();
+	unsigned int hours = GetCorrectHoursValue();
 	cout << "Enter the minutes: ";
-	minutes = GetCorrectMinutesOrSecondsValue();
+	unsigned int minutes = GetCorrectMinutesOrSecondsValue();
 	cout << "Enter the seconds: ";
-	seconds = GetCorrectMinutesOrSecondsValue();
+	unsigned int seconds = GetCorrectMinutesOrSecondsValue();
 	return MakeTime(hours, minutes, seconds);
 }
 

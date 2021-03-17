@@ -66,5 +66,4 @@ void CircleMain()
 	delete thirdCopiedCircle;
 	system("pause");
 	system("cls");
-	return;
 }
