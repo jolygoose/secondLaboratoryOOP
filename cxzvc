@@ -1,0 +1,21 @@
+* [jolygoose] 2021-03-18 | a08c5c5 | Fix reviews comments (HEAD, main)
+* [jolygoose] 2021-03-17 | e02bc2d | Fix UTF-8
+* [jolygoose] 2021-03-17 | eb80d0c | Add enums
+* [jolygoose] 2021-03-17 | 677862a | Add enums files
+* [jolygoose] 2021-03-17 | 432e5d6 | Fix convert-functions, complete circle.cpp/h
+* [jolygoose] 2021-03-16 | 10dcc77 | Enums added, TODO: fix convert
+* [jolygoose] 2021-03-16 | a95c57a | Add 2.2.7.3 marks
+* [jolygoose] 2021-03-16 | 858dc73 | Add doxygen, fix secondBlock name
+* [jolygoose] 2021-03-15 | a4b9474 | Add struct and enums comments
+* [jolygoose] 2021-03-15 | f4deec0 | Add copy-functions
+* [jolygoose] 2021-03-15 | 18b0f01 | Add time constructor and fix rectangle constructor
+* [Стахин Лев] 2021-03-15 | 13f42cd | Add flight and rectangle constructors
+* [jolygoose] 2021-03-15 | 2f1ac07 | Add constructor to movie
+* [Стахин Лев] 2021-03-11 | 47f88dd | complete 2.2.6.*
+* [Стахин Лев] 2021-03-11 | 627fce7 | delete song.cpp, subject.cpp, phonecontact.cpp
+* [Стахин Лев] 2021-03-11 | b68f03c | Complete rectangle
+* [jolygoose] 2021-03-11 | 55ac7b9 | upgrade rectangle
+* [jolygoose] 2021-03-10 | 6eb7073 | Add time, rectangle, flight, movie structs and menus
+* [jolygoose] 2021-03-08 | b379c3c | Add structures
+* [Стахин Лев] 2021-03-06 | 2373c66 | Connect second device and create second block
+* [jolygoose] 2021-03-06 | 524b445 | Creation program, Complete first block
