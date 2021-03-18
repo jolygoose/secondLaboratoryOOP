@@ -7,6 +7,17 @@
 using namespace std;
 
 
+const int GetArraySize()
+{
+	const int bufferSize = GetCorrectIntegerValue();
+	if (bufferSize < 1)
+	{
+		throw exception("Error: Array size cannot be less than one");
+	}
+	return bufferSize;
+}
+
+
 void SortArrayOfDoubles(double* arrayOfValues, int count)
 {
 	for (int i = 0; i < count; ++i)
@@ -53,15 +64,10 @@ void FirstBlockMain()
 			case FirstBlockTasks::Second:
 			{
 				cout << "Sample function with an exception" << endl << endl;
-				cout << "Enter the array size: ";
-				const int bufferSize = GetCorrectIntegerValue();
 				try
 				{
-					if (bufferSize < 1)
-					{
-						exception except;
-						throw except;
-					}
+					cout << "Enter the array size: ";
+					const int bufferSize = GetArraySize();
 					double* arrayOfValues = new double[bufferSize];
 					cout << endl;
 					for (int i = 0; i < bufferSize; ++i)

@@ -12,6 +12,8 @@ enum class FirstBlockTasks
 	Exit = 27 // ESC
 };
 
+const int GetArraySize();
+
 /// @brief Функция сортировки массива вещественных чисел
 /// 
 /// @param arrayOfValues - массив вещественных чисел
