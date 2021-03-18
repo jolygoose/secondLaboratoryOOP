@@ -42,10 +42,22 @@ Color GetCorrectColor();
 /// @return Результат конвертации
 string ConvertColorEnumToText(Color color);
 
+/// @brief Функция вывода массива цветов на экран
+/// 
+/// @param colors - массив цветов 
+/// @param arraySize - размер массива
 void ShowColors(Color colors[], const unsigned int arraySize);
 
+/// @brief Функция подсчёта количества определённого цвета в массиве
+/// 
+/// @param colors - массив цветов
+/// @param count - размер массива
+/// @param findedColor - искомый цвет
+/// 
+/// @return Результат подсчёта
 int CountColor(Color* colors, unsigned int count, Color findedColor);
 
+/// @brief Функция-меню для работы с перечислением цветов
 void ColorMain();
 
 #endif //!_COLOR_H_

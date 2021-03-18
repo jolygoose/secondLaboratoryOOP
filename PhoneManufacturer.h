@@ -31,6 +31,11 @@ enum class PhoneManufacturer
 	Xiaomi = 56		// 8
 };
 
+/// @brief Функция конвертации перечисления производителей телефона в текст
+/// 
+/// @param phoneManufacturer - производитель телефона
+/// 
+/// @return Результат поиска
 string ConvertPhoneManufacturerEnumToText(PhoneManufacturer phoneManufacturer);
 
 void ShowPhoneManufacturers(PhoneManufacturer phoneManufacturers[], const unsigned int arraySize);

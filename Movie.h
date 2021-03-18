@@ -101,6 +101,15 @@ void ChangeInfoAboutMovie(Movie* movie);
 /// @param movie - фильм
 void ShowMovie(Movie* movie);
 
+/// @brief Функция поиска фильма по заданному жанру с наивысшим рейтингом
+/// 
+/// @param movies - массив фильмов
+/// @param count - размер массива
+/// @param findedGenre - заданный жанр
+/// 
+/// @retval nullptr - фильм не найден
+/// 
+/// @return Результат поиска
 Movie* FindBestGenreMovie(Movie** movies, unsigned int count, Genre findedGenre);
 
 /// @brief Функция-меню для работы со структурой фильм

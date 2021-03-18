@@ -29,12 +29,18 @@ enum class FormOfEducation
 
 /// @brief Функция конвертирования формы обучения в текст
 /// 
-/// @param formOfEducation 
-/// @return 
+/// @param formOfEducation - форма обучения
+/// 
+/// @return Результат конвертации
 string ConvertFormOfEducationEnumToText(FormOfEducation formOfEducation);
 
+/// @brief Функция вывода на экран массива форм обучения
+/// 
+/// @param formsOfEducation - массив форм обучения
+/// @param arraySize - размер массива
 void ShowFormsOfEducation(FormOfEducation formsOfEducation[], const unsigned int arraySize);
 
+/// @brief Функция-меню для работы с перечислением форм обучения
 void FormOfEducationMain();
 
 #endif //!_FORMOFEDUCATION_H_
