@@ -5,6 +5,7 @@
 #include "FormOfEducation.h"
 #include "PhoneManufacturer.h"
 #include "Season.h"
+#include "Color.h"
 #include "Common.h"
 
 using namespace std;
@@ -17,6 +18,7 @@ void WorkWithSomeEnums()
 			<< "1. Work with forms of education enum" << endl
 			<< "2. Work with phone manufacturer enum" << endl
 			<< "3. Work with season enum" << endl
+			<< "4. Work with color enum" << endl
 			<< "Press ESC for exit" << endl;
 		ThirdBlockTasks taskChoice = static_cast <ThirdBlockTasks> (_getch());
 		system("cls");
@@ -38,6 +40,12 @@ void WorkWithSomeEnums()
 			{
 				cout << "Work with season enum" << endl << endl;
 				SeasonMain();
+				break;
+			}
+			case ThirdBlockTasks::Color:
+			{
+				cout << "Work with color enum" << endl << endl;
+				ColorMain();
 				break;
 			}
 			case ThirdBlockTasks::Exit:

@@ -5,12 +5,12 @@
 #include "Common.h"
 
 
-Rectangle* MakeRectangle(double length, double width, string color)
+Rectangle* MakeRectangle(double length, double width, Color color)
 {
 	Rectangle* rectangle = new Rectangle();
 	rectangle->Length = length;
 	rectangle->Width = width;
-	rectangle->Color = color;
+	rectangle->MainColor = color;
 	return rectangle;
 }
 
@@ -20,26 +20,30 @@ Rectangle* CopyRectangle(Rectangle* rectangle)
 	Rectangle* copiedRectangle = new Rectangle();
 	copiedRectangle->Length = rectangle->Length;
 	copiedRectangle->Width = rectangle->Width;
-	copiedRectangle->Color = rectangle->Color;
+	copiedRectangle->MainColor = rectangle->MainColor;
 	return copiedRectangle;
 }
 
 
 Rectangle* DemoRectangle()
 {
-	return MakeRectangle(90, 50, "Purple");
+	return MakeRectangle(90, 50, Color::Purple);
 }
 
 
 Rectangle* PushInfoAboutRectangle()
 {
-	string color;
 	cout << "Enter the length of rectangle: ";
 	double length = GetCorrectUnsignedDoubleValue();
 	cout << "Enter the width of rectangle: ";
 	double width = GetCorrectUnsignedDoubleValue();
 	cout << "Enter the color of rectangle: ";
-	getline(cin, color);
+	cout << "Press the key with the specific number to select the"
+		<< " main color of the rectangle:"
+		<< endl << "1. Red\t\t2.Orange\t3.Yellow"
+		<< endl << "4. Green\t5.Light blue\t6.Blue\t7.Purple"
+		<< endl;
+	Color color = GetCorrectColor();
 	return MakeRectangle(length, width, color);
 }
 
@@ -50,8 +54,12 @@ void ChangeInfoAboutRectangle(Rectangle* rectangle)
 	rectangle->Length = GetCorrectUnsignedDoubleValue();
 	cout << "Enter the width: ";
 	rectangle->Width = GetCorrectUnsignedDoubleValue();
-	cout << "Enter the color: ";
-	getline(cin, rectangle->Color);
+	cout << "Press the key with the specific number to select the"
+		<< " main color of the rectangle:"
+		<< endl << "1. Red\t\t2.Orange\t3.Yellow"
+		<< endl << "4. Green\t5.Light blue\t6.Blue\t7.Purple"
+		<< endl;
+	rectangle->MainColor = GetCorrectColor();
 }
 
 
@@ -60,7 +68,8 @@ void ShowRectangle(Rectangle* rectangle)
 	cout << "Rectangle characteristics: "
 		<< "Length = " << rectangle->Length << " | "
 		<< "Width = " << rectangle->Width << " | "
-		<< "Color = " << rectangle->Color << " |" << endl;
+		<< "Color = " << ConvertColorEnumToText(rectangle->MainColor)
+		<< " |" << endl;
 }
 
 // 2.2.5.1
@@ -69,7 +78,8 @@ void WriteRectangle(Rectangle*& rectangle)
 	cout << "Rectangle characteristics: "
 		<< "Length = " << rectangle->Length << " | "
 		<< "Width = " << rectangle->Width << " | "
-		<< "Color = " << rectangle->Color << " |" << endl;
+		<< "Color = " << ConvertColorEnumToText(rectangle->MainColor)
+		<< " |" << endl;
 }
 
 // 2.2.5.2
@@ -79,8 +89,12 @@ void ReadRectangle(Rectangle*& rectangle)
 	rectangle->Length = GetCorrectUnsignedIntegerValue();
 	cout << "Enter the width: ";
 	rectangle->Width = GetCorrectUnsignedIntegerValue();
-	cout << "Enter the color: ";
-	getline(cin, rectangle->Color);
+	cout << "Press the key with the specific number to select the"
+		<< " main color of the rectangle:"
+		<< endl << "1. Red\t\t2.Orange\t3.Yellow"
+		<< endl << "4. Green\t5.Light blue\t6.Blue\t7.Purple"
+		<< endl;
+	rectangle->MainColor = GetCorrectColor();
 }
 
 // 2.2.5.3
@@ -113,9 +127,9 @@ void Exchange(Rectangle*& firstRectangle, Rectangle*& secondRectangle)
 	firstRectangle->Width = secondRectangle->Width;
 	secondRectangle->Width = temporaryStorage;
 	// Color
-	string temporaryString = firstRectangle->Color;
-	firstRectangle->Color = secondRectangle->Color;
-	secondRectangle->Color = temporaryString;
+	Color temporaryColor = firstRectangle->MainColor;
+	firstRectangle->MainColor = secondRectangle->MainColor;
+	secondRectangle->MainColor = temporaryColor;
 }
 
 // 2.2.5.5

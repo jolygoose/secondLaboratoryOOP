@@ -101,6 +101,8 @@ void ChangeInfoAboutMovie(Movie* movie);
 /// @param movie - фильм
 void ShowMovie(Movie* movie);
 
+Movie* FindBestGenreMovie(Movie** movies, unsigned int count, Genre findedGenre);
+
 /// @brief Функция-меню для работы со структурой фильм
 void MovieMain();
 

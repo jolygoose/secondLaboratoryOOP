@@ -5,6 +5,8 @@
 
 #include <string>
 
+#include "Color.h"
+
 using namespace std;
 
 /// @brief Перечисление доступных пунктов меню работы
@@ -18,8 +20,6 @@ enum class RectangleMenu
 	Exit = 27 // ESC
 };
 
-
-
 /// @brief Структура прямоугольника
 struct Rectangle
 {
@@ -28,7 +28,7 @@ struct Rectangle
 	// Ширина
 	double Width = 0;
 	// Цвет
-	string Color;
+	Color MainColor;
 };
 
 /// @brief Функция-конструктор объекта структуры прямоугольник

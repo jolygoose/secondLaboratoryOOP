@@ -40,7 +40,8 @@ double GetCorrectRating()
 	const double maximumBorder = 10.0;
 	while ((rating < minimumBorder) || (rating > maximumBorder))
 	{
-		cerr << "Error: Choice cannot be less than 0.0 and more than 10.0" << endl;
+		cerr << "Error: Choice cannot be less than 0.0 and more than 10.0" 
+			<< endl;
 		rating = GetCorrectUnsignedDoubleValue();
 	}
 	return rating;
@@ -156,6 +157,23 @@ void ShowMovie(Movie* movie)
 }
 
 
+Movie* FindBestGenreMovie(Movie** movies, unsigned int count, Genre findedGenre)
+{
+	double maximumRating = 0.0;
+	Movie* movieWithMaximumRating = nullptr;
+	for (unsigned int i = 0; i < count; ++i)
+	{
+		if ((movies[i]->MovieGenre == findedGenre)
+			&& (movies[i]->Rating > maximumRating))
+		{
+			maximumRating = movies[i]->Rating;
+			movieWithMaximumRating = movies[i];
+		}
+	}
+	return movieWithMaximumRating;
+}
+
+
 void MovieMain()
 {
 	while (true)
@@ -233,7 +251,29 @@ void MovieMain()
 					cout << "Movie [" << i << "]: ";
 					ShowMovie(arrayOfMovies[i]);
 				}
-				cout << endl;
+				cout << endl << "Press the key with the specific"
+					<< "number to select the genre to search movie"
+					<< "with best rating:"
+					<< endl << "1. Comedy\t2.Drama\t\t3.Thriller"
+					<< endl << "4. Action\t5.Horror\t6.Blockbuster" 
+					<< endl;
+				Genre findedGenre = GetCorrectGenre();
+				Movie* searchResult = FindBestGenreMovie
+					(arrayOfMovies, arraySize, findedGenre);
+				if (searchResult)
+				{
+					cout << endl << "Best movie with genre "
+						<< ConvertGenreEnumToText(findedGenre)
+						<< " is '" << searchResult->Title
+						<< "' | Rating: " << searchResult->Rating
+						<< endl << endl;
+				}
+				else
+				{
+					cout << endl << "There is no movie with genre "
+						<< ConvertGenreEnumToText(findedGenre)
+						<< endl << endl;
+				}
 				for (unsigned int i = 0; i < arraySize; ++i)
 				{
 					delete arrayOfMovies[i];
